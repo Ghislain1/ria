@@ -1,0 +1,143 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "services": "Services",
+    "about": "À propos",
+    "testimonials": "Témoignages",
+    "contact": "Contact"
+  },
+  "hero": {
+    "badge": "Services de Traiteur Premium",
+    "title": "Un Traiteur Exceptionnel",
+    "titleHighlight": "pour Chaque Occasion",
+    "subtitle": "Des réunions familiales intimes aux grands événements d'entreprise, Ria's Cuisine offre des expériences culinaires inoubliables avec des saveurs africaines authentiques et des classiques internationaux.",
+    "ctaQuote": "Demander un devis",
+    "ctaServices": "Découvrir nos services",
+    "tags": ["Mariages", "Entreprises", "Fêtes", "Festivals"]
+  },
+  "services": {
+    "title": "Nos Services",
+    "subtitle": "Des solutions de restauration complètes adaptées pour rendre votre événement vraiment mémorable.",
+    "items": [
+      {
+        "title": "Traiteur de Mariage",
+        "description": "Menus élégants et service complet pour les mariages. Nous créons des expériences culinaires mémorables qui complètent votre jour spécial."
+      },
+      {
+        "title": "Traiteur d'Entreprise",
+        "description": "Restauration professionnelle pour réunions, conférences et événements d'affaires. Impressionnez vos clients et collègues avec une cuisine exceptionnelle."
+      },
+      {
+        "title": "Fêtes d'Anniversaire",
+        "description": "Menus personnalisés pour les anniversaires et fêtes privées. Laissez-nous rendre votre célébration délicieusement inoubliable."
+      },
+      {
+        "title": "Événements Familiaux",
+        "description": "Repas pour les réunions, anniversaires et rassemblements familiaux. Rassembler les familles autour de la joie d'une bonne cuisine."
+      },
+      {
+        "title": "Événements Communautaires & Culturels",
+        "description": "Restauration à grande échelle pour festivals et célébrations communautaires. Nous gérons des événements de toute taille avec professionnalisme et soin."
+      },
+      {
+        "title": "Traiteur Personnalisé",
+        "description": "Solutions de restauration personnalisées pour tout événement. Votre vision, notre expertise culinaire — l'association parfaite."
+      }
+    ]
+  },
+  "about": {
+    "title": "À propos de Ria's Cuisine",
+    "subtitle": "Rassembler les gens avec passion à travers une cuisine exceptionnelle.",
+    "paragraph1": "Ria's Cuisine est passionnée par l'art de rassembler les gens autour d'une cuisine exceptionnelle. Tout en étant ancrée dans les traditions culinaires africaines, nous créons des menus personnalisés pour chaque événement et chaque invité.",
+    "paragraph2": "Notre mission est de rendre chaque célébration mémorable grâce à une cuisine exceptionnelle et un service professionnel.",
+    "tagline": "Fait avec amour, servi avec passion",
+    "stats": {
+      "events": "Événements Traités",
+      "guests": "Invités",
+      "dishes": "Plats"
+    },
+    "award": "Excellence en Traiteur Récompensée"
+  },
+  "testimonials": {
+    "title": "Ce que disent nos clients",
+    "subtitle": "Écoutez les clients qui nous font confiance pour rendre leurs événements extraordinaires.",
+    "items": [
+      {
+        "name": "Sarah & James",
+        "role": "Mariés",
+        "content": "Ria's Cuisine a rendu notre jour de mariage absolument parfait. La nourriture était exceptionnelle et la présentation élégante. Nos invités parlent encore du riz jollof !"
+      },
+      {
+        "name": "Michael T.",
+        "role": "Client d'Entreprise",
+        "content": "Nous avons engagé Ria's Cuisine pour notre conférence annuelle. Professionnel, ponctuel, et la nourriture était exceptionnelle. Ils ont géré plus de 300 invités sans problème."
+      },
+      {
+        "name": "Amara K.",
+        "role": "Organisatrice d'Anniversaire",
+        "content": "Le menu personnalisé pour l'anniversaire de mon fils a eu beaucoup de succès ! Les enfants ont adoré la nourriture et les adultes ont apprécié les saveurs africaines authentiques. Je recommande vivement !"
+      },
+      {
+        "name": "Centre Communautaire",
+        "role": "Coordinateur d'Événements",
+        "content": "Pour notre festival culturel, Ria's Cuisine a dépassé toutes nos attentes. Leur capacité à répondre à divers besoins alimentaires tout en maintenant la qualité est impressionnante."
+      }
+    ]
+  },
+  "contact": {
+    "title": "Prenez Contact",
+    "subtitle": "Prêt à rendre votre événement inoubliable ? Parlez-nous de votre événement et nous créerons le menu parfait.",
+    "labels": {
+      "name": "Nom Complet *",
+      "email": "Adresse E-mail *",
+      "phone": "Numéro de Téléphone *",
+      "eventType": "Type d'Événement *",
+      "eventDate": "Date de l'Événement *",
+      "guestCount": "Nombre d'Invitations *",
+      "venueLocation": "Lieu de l'Événement *",
+      "budget": "Budget *",
+      "message": "Demandes Spéciales"
+    },
+    "placeholders": {
+      "name": "Votre nom",
+      "email": "votre@email.fr",
+      "phone": "0049 176 62028482",
+      "guestCount": "ex. 100",
+      "venueLocation": "Ville ou nom du lieu",
+      "message": "Régimes alimentaires, cuisine préférée ou demandes spéciales..."
+    },
+    "eventTypes": {
+      "placeholder": "Sélectionnez le type d'événement",
+      "items": ["Mariage", "Événement d'Entreprise", "Fête d'Anniversaire", "Réunion de Famille", "Événement Communautaire", "Festival", "Fête Privée", "Autre"]
+    },
+    "budgetRanges": {
+      "placeholder": "Sélectionnez le budget",
+      "items": ["Moins de 500 €", "500 € – 1 000 €", "1 000 € – 3 000 €", "3 000 € – 5 000 €", "5 000 € – 10 000 €", "10 000 €+"]
+    },
+    "errors": {
+      "nameMin": "Le nom doit contenir au moins 2 caractères",
+      "email": "Veuillez saisir une adresse e-mail valide",
+      "phone": "Veuillez saisir un numéro de téléphone valide",
+      "eventType": "Veuillez sélectionner un type d'événement",
+      "eventDate": "Veuillez sélectionner une date",
+      "guestCount": "Veuillez saisir le nombre d'invités",
+      "venueLocation": "Veuillez saisir un lieu",
+      "budget": "Veuillez sélectionner un budget"
+    },
+    "submit": "Envoyer la demande",
+    "sending": "Envoi en cours...",
+    "success": "Merci pour votre demande ! Nous vous répondrons sous 24 heures.",
+    "error": "Une erreur est survenue. Veuillez réessayer."
+  },
+  "footer": {
+    "description": "Un traiteur exceptionnel pour chaque occasion. Rassembler les gens à travers des expériences culinaires inoubliables.",
+    "quickLinks": "Liens rapides",
+    "contactInfo": "Coordonnées",
+    "rights": "Tous droits réservés."
+  },
+  "language": {
+    "de": "Deutsch",
+    "en": "English",
+    "fr": "Français"
+  }
+}

@@ -1,7 +1,16 @@
 import { ChefHat, Mail, Phone, MapPin } from 'lucide-react'
+import { useTranslation } from 'react-i18next'
 
 export function Footer() {
+  const { t } = useTranslation()
   const year = new Date().getFullYear()
+
+  const links = [
+    { label: t('nav.services'), href: '#services' },
+    { label: t('nav.about'), href: '#about' },
+    { label: t('nav.testimonials'), href: '#testimonials' },
+    { label: t('nav.contact'), href: '#contact' },
+  ]
 
   return (
     <footer className="bg-[var(--color-bg-alt)] border-t border-[var(--color-border)]">
@@ -15,23 +24,22 @@ export function Footer() {
               </span>
             </div>
             <p className="text-[var(--color-text-muted)] leading-relaxed">
-              Exceptional catering for every occasion. Bringing people together
-              through unforgettable culinary experiences.
+              {t('footer.description')}
             </p>
           </div>
 
           <div>
             <h3 className="text-sm font-semibold uppercase tracking-wider text-[var(--color-text)] mb-4">
-              Quick Links
+              {t('footer.quickLinks')}
             </h3>
             <ul className="space-y-3">
-              {['Services', 'About', 'Testimonials', 'Contact'].map((item) => (
-                <li key={item}>
+              {links.map((link) => (
+                <li key={link.href}>
                   <a
-                    href={`#${item.toLowerCase()}`}
+                    href={link.href}
                     className="text-[var(--color-text-muted)] hover:text-[var(--color-primary)] transition-colors"
                   >
-                    {item}
+                    {link.label}
                   </a>
                 </li>
               ))}
@@ -40,12 +48,12 @@ export function Footer() {
 
           <div>
             <h3 className="text-sm font-semibold uppercase tracking-wider text-[var(--color-text)] mb-4">
-              Contact Info
+              {t('footer.contactInfo')}
             </h3>
             <ul className="space-y-3">
               <li className="flex items-center gap-3 text-[var(--color-text-muted)]">
                 <Phone className="h-4 w-4 text-[var(--color-primary)] shrink-0" />
-                (555) 123-4567
+                0049 176 62028482
               </li>
               <li className="flex items-center gap-3 text-[var(--color-text-muted)]">
                 <Mail className="h-4 w-4 text-[var(--color-primary)] shrink-0" />
@@ -53,14 +61,14 @@ export function Footer() {
               </li>
               <li className="flex items-center gap-3 text-[var(--color-text-muted)]">
                 <MapPin className="h-4 w-4 text-[var(--color-primary)] shrink-0" />
-                Houston, TX
+                Streitzeuggasse 1, 50667 Köln
               </li>
             </ul>
           </div>
         </div>
 
         <div className="pt-8 border-t border-[var(--color-border)] text-center text-sm text-[var(--color-text-muted)]">
-          &copy; {year} Ria's Cuisine. All rights reserved.
+          &copy; {year} Ria's Cuisine. {t('footer.rights')}
         </div>
       </div>
     </footer>

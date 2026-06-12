@@ -1,6 +1,7 @@
 import { useEffect, lazy, Suspense } from 'react'
 import { Helmet } from 'react-helmet-async'
 import { Toaster } from 'sonner'
+import { useTranslation } from 'react-i18next'
 
 const Home = lazy(() => import('@/pages/Home'))
 
@@ -13,6 +14,8 @@ function LoadingSpinner() {
 }
 
 export function App() {
+  const { i18n } = useTranslation()
+
   useEffect(() => {
     const handleAnchor = () => {
       const hash = window.location.hash
@@ -30,7 +33,7 @@ export function App() {
   return (
     <>
       <Helmet>
-        <html lang="en" />
+        <html lang={i18n.language} />
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta

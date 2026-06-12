@@ -1,31 +1,37 @@
-import { useState } from 'react'
+import { useState, useMemo } from 'react'
 import { motion } from 'framer-motion'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from 'zod'
 import { Send, Loader2 } from 'lucide-react'
 import { toast } from 'sonner'
+import { useTranslation } from 'react-i18next'
 import { SectionWrapper } from '@/components/common/SectionWrapper'
 import { SectionHeading } from '@/components/common/SectionHeading'
 import { Button } from '@/components/ui/Button'
-import { eventTypes, budgetRanges } from '@/data'
 import { submitContactForm } from '@/services/contactService'
 
-const contactSchema = z.object({
-  name: z.string().min(2, 'Name must be at least 2 characters'),
-  email: z.string().email('Please enter a valid email address'),
-  phone: z.string().min(7, 'Please enter a valid phone number'),
-  eventType: z.string().min(1, 'Please select an event type'),
-  eventDate: z.string().min(1, 'Please select an event date'),
-  guestCount: z.string().min(1, 'Please enter the number of guests'),
-  venueLocation: z.string().min(2, 'Please enter a venue location'),
-  budget: z.string().min(1, 'Please select a budget range'),
-  message: z.string().optional(),
-})
-
-type ContactForm = z.infer<typeof contactSchema>
-
 export function Contact() {
+  const { t, i18n } = useTranslation()
+
+  const eventTypes = t('contact.eventTypes.items', { returnObjects: true }) as string[]
+  const budgetRanges = t('contact.budgetRanges.items', { returnObjects: true }) as string[]
+
+  const contactSchema = useMemo(() => z.object({
+    name: z.string().min(2, t('contact.errors.nameMin')),
+    email: z.string().email(t('contact.errors.email')),
+    phone: z.string().min(7, t('contact.errors.phone')),
+    eventType: z.string().min(1, t('contact.errors.eventType')),
+    eventDate: z.string().min(1, t('contact.errors.eventDate')),
+    guestCount: z.string().min(1, t('contact.errors.guestCount')),
+    venueLocation: z.string().min(2, t('contact.errors.venueLocation')),
+    budget: z.string().min(1, t('contact.errors.budget')),
+    message: z.string().optional(),
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }), [i18n.language])
+
+  type ContactForm = z.infer<typeof contactSchema>
+
   const [submitting, setSubmitting] = useState(false)
 
   const {
@@ -43,11 +49,11 @@ export function Contact() {
       const payload = { ...data, guestCount: Number(data.guestCount) }
       const result = await submitContactForm(payload)
       if (result.success) {
-        toast.success(result.message)
+        toast.success(t('contact.success'))
         reset()
       }
     } catch {
-      toast.error('Something went wrong. Please try again.')
+      toast.error(t('contact.error'))
     } finally {
       setSubmitting(false)
     }
@@ -62,8 +68,8 @@ export function Contact() {
   return (
     <SectionWrapper id="contact">
       <SectionHeading
-        title="Get in Touch"
-        subtitle="Ready to make your event unforgettable? Tell us about your event and we'll create the perfect menu."
+        title={t('contact.title')}
+        subtitle={t('contact.subtitle')}
       />
 
       <motion.form
@@ -76,45 +82,45 @@ export function Contact() {
       >
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-5">
           <div>
-            <label htmlFor="name" className={labelClass}>Full Name *</label>
+            <label htmlFor="name" className={labelClass}>{t('contact.labels.name')}</label>
             <input
               id="name"
               {...register('name')}
-              placeholder="Your name"
+              placeholder={t('contact.placeholders.name')}
               className={inputClass}
             />
             {errors.name && <p className={errorClass}>{errors.name.message}</p>}
           </div>
 
           <div>
-            <label htmlFor="email" className={labelClass}>Email Address *</label>
+            <label htmlFor="email" className={labelClass}>{t('contact.labels.email')}</label>
             <input
               id="email"
               type="email"
               {...register('email')}
-              placeholder="your@email.com"
+              placeholder={t('contact.placeholders.email')}
               className={inputClass}
             />
             {errors.email && <p className={errorClass}>{errors.email.message}</p>}
           </div>
 
           <div>
-            <label htmlFor="phone" className={labelClass}>Phone Number *</label>
+            <label htmlFor="phone" className={labelClass}>{t('contact.labels.phone')}</label>
             <input
               id="phone"
               type="tel"
               {...register('phone')}
-              placeholder="(555) 123-4567"
+              placeholder={t('contact.placeholders.phone')}
               className={inputClass}
             />
             {errors.phone && <p className={errorClass}>{errors.phone.message}</p>}
           </div>
 
           <div>
-            <label htmlFor="eventType" className={labelClass}>Event Type *</label>
+            <label htmlFor="eventType" className={labelClass}>{t('contact.labels.eventType')}</label>
             <select id="eventType" {...register('eventType')} className={inputClass}>
-              <option value="">Select event type</option>
-              {eventTypes.map((type) => (
+              <option value="">{t('contact.eventTypes.placeholder')}</option>
+              {eventTypes.map((type: string) => (
                 <option key={type} value={type}>{type}</option>
               ))}
             </select>
@@ -122,7 +128,7 @@ export function Contact() {
           </div>
 
           <div>
-            <label htmlFor="eventDate" className={labelClass}>Event Date *</label>
+            <label htmlFor="eventDate" className={labelClass}>{t('contact.labels.eventDate')}</label>
             <input
               id="eventDate"
               type="date"
@@ -133,33 +139,33 @@ export function Contact() {
           </div>
 
           <div>
-            <label htmlFor="guestCount" className={labelClass}>Number of Guests *</label>
+            <label htmlFor="guestCount" className={labelClass}>{t('contact.labels.guestCount')}</label>
             <input
               id="guestCount"
               type="number"
               {...register('guestCount')}
-              placeholder="e.g. 100"
+              placeholder={t('contact.placeholders.guestCount')}
               className={inputClass}
             />
             {errors.guestCount && <p className={errorClass}>{errors.guestCount.message}</p>}
           </div>
 
           <div>
-            <label htmlFor="venueLocation" className={labelClass}>Venue Location *</label>
+            <label htmlFor="venueLocation" className={labelClass}>{t('contact.labels.venueLocation')}</label>
             <input
               id="venueLocation"
               {...register('venueLocation')}
-              placeholder="City or venue name"
+              placeholder={t('contact.placeholders.venueLocation')}
               className={inputClass}
             />
             {errors.venueLocation && <p className={errorClass}>{errors.venueLocation.message}</p>}
           </div>
 
           <div>
-            <label htmlFor="budget" className={labelClass}>Budget Range *</label>
+            <label htmlFor="budget" className={labelClass}>{t('contact.labels.budget')}</label>
             <select id="budget" {...register('budget')} className={inputClass}>
-              <option value="">Select budget range</option>
-              {budgetRanges.map((range) => (
+              <option value="">{t('contact.budgetRanges.placeholder')}</option>
+              {budgetRanges.map((range: string) => (
                 <option key={range} value={range}>{range}</option>
               ))}
             </select>
@@ -168,12 +174,12 @@ export function Contact() {
         </div>
 
         <div className="mb-6">
-          <label htmlFor="message" className={labelClass}>Special Requests</label>
+          <label htmlFor="message" className={labelClass}>{t('contact.labels.message')}</label>
           <textarea
             id="message"
             {...register('message')}
             rows={4}
-            placeholder="Dietary restrictions, preferred cuisine, or any special requests..."
+            placeholder={t('contact.placeholders.message')}
             className={`${inputClass} resize-none`}
           />
         </div>
@@ -187,12 +193,12 @@ export function Contact() {
           {submitting ? (
             <>
               <Loader2 className="h-5 w-5 animate-spin" />
-              Sending...
+              {t('contact.sending')}
             </>
           ) : (
             <>
               <Send className="h-5 w-5" />
-              Send Inquiry
+              {t('contact.submit')}
             </>
           )}
         </Button>

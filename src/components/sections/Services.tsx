@@ -7,26 +7,34 @@ import {
   Globe,
   Sparkles,
 } from 'lucide-react'
+import { useTranslation } from 'react-i18next'
 import { SectionWrapper } from '@/components/common/SectionWrapper'
 import { SectionHeading } from '@/components/common/SectionHeading'
-import { services } from '@/data'
 
 const icons = [Heart, Building2, Cake, Users, Globe, Sparkles]
 
+interface ServiceItem {
+  title: string
+  description: string
+}
+
 export function Services() {
+  const { t } = useTranslation()
+  const items = t('services.items', { returnObjects: true }) as ServiceItem[]
+
   return (
     <SectionWrapper id="services" dark>
       <SectionHeading
-        title="Our Services"
-        subtitle="Comprehensive catering solutions tailored to make your event truly memorable."
+        title={t('services.title')}
+        subtitle={t('services.subtitle')}
       />
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-        {services.map((service, index) => {
+        {items.map((service, index) => {
           const Icon = icons[index]
           return (
             <motion.div
-              key={service.id}
+              key={service.title}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}

@@ -1,0 +1,143 @@
+{
+  "nav": {
+    "home": "Startseite",
+    "services": "Leistungen",
+    "about": "Über uns",
+    "testimonials": "Referenzen",
+    "contact": "Kontakt"
+  },
+  "hero": {
+    "badge": "Premium Catering-Service",
+    "title": "Außergewöhnliches Catering",
+    "titleHighlight": "für jeden Anlass",
+    "subtitle": "Von intimen Familienfeiern bis zu großen Firmenevents – Ria's Cuisine bietet unvergessliche kulinarische Erlebnisse mit authentischen afrikanischen Aromen und internationalen Klassikern.",
+    "ctaQuote": "Angebot anfordern",
+    "ctaServices": "Unsere Leistungen",
+    "tags": ["Hochzeiten", "Firmen", "Partys", "Feste"]
+  },
+  "services": {
+    "title": "Unsere Leistungen",
+    "subtitle": "Umfassende Catering-Lösungen, maßgeschneidert für Ihr unvergessliches Event.",
+    "items": [
+      {
+        "title": "Hochzeitscatering",
+        "description": "Elegante Menüs und Full-Service-Catering für Hochzeiten. Wir schaffen unvergessliche kulinarische Erlebnisse für Ihren besonderen Tag."
+      },
+      {
+        "title": "Firmencatering",
+        "description": "Professionelles Catering für Meetings, Konferenzen und Geschäftsveranstaltungen. Beeindrucken Sie Ihre Kunden und Kollegen mit außergewöhnlicher Küche."
+      },
+      {
+        "title": "Geburtstagsfeiern",
+        "description": "Maßgeschneiderte Menüs für Geburtstage und private Feiern. Lassen Sie uns Ihre Feier köstlich unvergesslich machen."
+      },
+      {
+        "title": "Familienevents",
+        "description": "Verpflegung für Treffen, Jubiläen und Familienfeiern. Familien durch die Freude an gutem Essen zusammenbringen."
+      },
+      {
+        "title": "Gemeinde- & Kulturevents",
+        "description": "Catering für Festivals und Gemeindefeiern jeder Größe. Wir betreuen Events jeder Größe mit Professionalität und Hingabe."
+      },
+      {
+        "title": "Individuelles Catering",
+        "description": "Persönliche Catering-Lösungen, zugeschnitten auf jedes Event. Ihre Vision, unsere kulinarische Expertise – die perfekte Kombination."
+      }
+    ]
+  },
+  "about": {
+    "title": "Über Ria's Cuisine",
+    "subtitle": "Mit Leidenschaft Menschen durch außergewöhnliches Essen zusammenbringen.",
+    "paragraph1": "Ria's Cuisine hat es sich zur Aufgabe gemacht, Menschen durch erstklassiges Essen zusammenzubringen. Verwurzelt in afrikanischen kulinarischen Traditionen kreieren wir maßgeschneiderte Menüs für jeden Anlass und jeden Gast.",
+    "paragraph2": "Unsere Mission ist es, jede Feier durch herausragende Küche und professionellen Service unvergesslich zu machen.",
+    "tagline": "Mit Liebe gemacht, mit Leidenschaft serviert",
+    "stats": {
+      "events": "Veranstaltungen betreut",
+      "guests": "Gäste",
+      "dishes": "Gerichte"
+    },
+    "award": "Ausgezeichnetes Catering auf höchstem Niveau"
+  },
+  "testimonials": {
+    "title": "Was unsere Kunden sagen",
+    "subtitle": "Hören Sie von den Kunden, die uns vertrauen, ihre Events außergewöhnlich zu gestalten.",
+    "items": [
+      {
+        "name": "Sarah & James",
+        "role": "Hochzeitsgäste",
+        "content": "Ria's Cuisine hat unseren Hochzeitstag absolut perfekt gemacht. Das Essen war hervorragend und die Präsentation elegant. Unsere Gäste schwärmen immer noch vom Jollof-Reis!"
+      },
+      {
+        "name": "Michael T.",
+        "role": "Firmenkunde",
+        "content": "Wir haben Ria's Cuisine für unsere Jahreskonferenz engagiert. Professionell, pünktlich und das Essen war außergewöhnlich. Sie haben 300+ Gäste nahtlos bewirtet."
+      },
+      {
+        "name": "Amara K.",
+        "role": "Geburtstagsorganisatorin",
+        "content": "Das maßgeschneiderte Menü für den Geburtstag meines Sohnes war ein voller Erfolg! Die Kinder liebten das Essen und die Erwachsenen schätzten die authentischen afrikanischen Aromen. Sehr empfehlenswert!"
+      },
+      {
+        "name": "Gemeindezentrum",
+        "role": "Eventkoordinator",
+        "content": "Für unser Kulturfestival hat Ria's Cuisine alle Erwartungen übertroffen. Ihre Fähigkeit, unterschiedliche Ernährungsbedürfnisse zu berücksichtigen und dabei die Qualität zu halten, ist beeindruckend."
+      }
+    ]
+  },
+  "contact": {
+    "title": "Kontakt aufnehmen",
+    "subtitle": "Bereit, Ihr Event unvergesslich zu machen? Erzählen Sie uns von Ihrem Event und wir erstellen das perfekte Menü.",
+    "labels": {
+      "name": "Vollständiger Name *",
+      "email": "E-Mail-Adresse *",
+      "phone": "Telefonnummer *",
+      "eventType": "Veranstaltungstyp *",
+      "eventDate": "Veranstaltungsdatum *",
+      "guestCount": "Anzahl der Gäste *",
+      "venueLocation": "Veranstaltungsort *",
+      "budget": "Budgetrahmen *",
+      "message": "Besondere Wünsche"
+    },
+    "placeholders": {
+      "name": "Ihr Name",
+      "email": "ihre@email.de",
+      "phone": "0049 176 62028482",
+      "guestCount": "z.B. 100",
+      "venueLocation": "Stadt oder Veranstaltungsort",
+      "message": "Ernährungseinschränkungen, bevorzugte Küche oder besondere Wünsche..."
+    },
+    "eventTypes": {
+      "placeholder": "Veranstaltungstyp auswählen",
+      "items": ["Hochzeit", "Firmenevent", "Geburtstagsfeier", "Familientreffen", "Gemeindeevent", "Festival", "Privatparty", "Sonstiges"]
+    },
+    "budgetRanges": {
+      "placeholder": "Budgetrahmen auswählen",
+      "items": ["Unter 500 €", "500 € – 1.000 €", "1.000 € – 3.000 €", "3.000 € – 5.000 €", "5.000 € – 10.000 €", "10.000 €+"]
+    },
+    "errors": {
+      "nameMin": "Name muss mindestens 2 Zeichen lang sein",
+      "email": "Bitte geben Sie eine gültige E-Mail-Adresse ein",
+      "phone": "Bitte geben Sie eine gültige Telefonnummer ein",
+      "eventType": "Bitte wählen Sie einen Veranstaltungstyp",
+      "eventDate": "Bitte wählen Sie ein Datum",
+      "guestCount": "Bitte geben Sie die Anzahl der Gäste ein",
+      "venueLocation": "Bitte geben Sie einen Veranstaltungsort ein",
+      "budget": "Bitte wählen Sie einen Budgetrahmen"
+    },
+    "submit": "Anfrage senden",
+    "sending": "Wird gesendet...",
+    "success": "Vielen Dank für Ihre Anfrage! Wir werden uns innerhalb von 24 Stunden bei Ihnen melden.",
+    "error": "Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut."
+  },
+  "footer": {
+    "description": "Außergewöhnliches Catering für jeden Anlass. Menschen durch unvergessliche kulinarische Erlebnisse zusammenbringen.",
+    "quickLinks": "Quicklinks",
+    "contactInfo": "Kontaktinformationen",
+    "rights": "Alle Rechte vorbehalten."
+  },
+  "language": {
+    "de": "Deutsch",
+    "en": "English",
+    "fr": "Français"
+  }
+}

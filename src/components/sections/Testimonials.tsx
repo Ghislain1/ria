@@ -1,11 +1,20 @@
 import { useState, useCallback, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { Quote, ChevronLeft, ChevronRight, Star } from 'lucide-react'
+import { useTranslation } from 'react-i18next'
 import { SectionWrapper } from '@/components/common/SectionWrapper'
 import { SectionHeading } from '@/components/common/SectionHeading'
-import { testimonials } from '@/data'
+
+interface TestimonialItem {
+  name: string
+  role: string
+  content: string
+}
 
 export function Testimonials() {
+  const { t } = useTranslation()
+  const testimonials = t('testimonials.items', { returnObjects: true }) as TestimonialItem[]
+
   const [current, setCurrent] = useState(0)
   const [direction, setDirection] = useState(0)
 
@@ -20,14 +29,14 @@ export function Testimonials() {
   const next = useCallback(() => {
     setDirection(1)
     setCurrent((prev) => (prev + 1) % testimonials.length)
-  }, [])
+  }, [testimonials.length])
 
   const prev = useCallback(() => {
     setDirection(-1)
     setCurrent(
       (prev) => (prev - 1 + testimonials.length) % testimonials.length
     )
-  }, [])
+  }, [testimonials.length])
 
   useEffect(() => {
     const timer = setInterval(next, 5000)
@@ -54,8 +63,8 @@ export function Testimonials() {
   return (
     <SectionWrapper id="testimonials" dark>
       <SectionHeading
-        title="What Our Clients Say"
-        subtitle="Hear from the clients who trust us to make their events extraordinary."
+        title={t('testimonials.title')}
+        subtitle={t('testimonials.subtitle')}
       />
 
       <div className="relative max-w-3xl mx-auto">
@@ -65,7 +74,7 @@ export function Testimonials() {
           </div>
 
           <motion.div
-            key={testimonial.id}
+            key={current}
             custom={direction}
             variants={variants}
             initial="enter"

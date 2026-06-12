@@ -1,0 +1,143 @@
+{
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "about": "About",
+    "testimonials": "Testimonials",
+    "contact": "Contact"
+  },
+  "hero": {
+    "badge": "Premium Catering Services",
+    "title": "Exceptional Catering",
+    "titleHighlight": "for Every Occasion",
+    "subtitle": "From intimate family gatherings to large corporate events, Ria's Cuisine delivers unforgettable culinary experiences with authentic African flavors and international favorites.",
+    "ctaQuote": "Request a Quote",
+    "ctaServices": "Explore Our Services",
+    "tags": ["Weddings", "Corporate", "Parties", "Festivals"]
+  },
+  "services": {
+    "title": "Our Services",
+    "subtitle": "Comprehensive catering solutions tailored to make your event truly memorable.",
+    "items": [
+      {
+        "title": "Wedding Catering",
+        "description": "Elegant menus and full-service catering for weddings. We create memorable dining experiences that complement your special day."
+      },
+      {
+        "title": "Corporate Catering",
+        "description": "Professional catering for meetings, conferences, and business events. Impress your clients and colleagues with exceptional cuisine."
+      },
+      {
+        "title": "Birthday Celebrations",
+        "description": "Customized menus for birthdays and private parties. Let us make your celebration deliciously unforgettable."
+      },
+      {
+        "title": "Family Events",
+        "description": "Food for reunions, anniversaries, and family gatherings. Bringing families together through the joy of great food."
+      },
+      {
+        "title": "Community & Cultural Events",
+        "description": "Large-scale catering for festivals and community celebrations. We handle events of any size with professionalism and care."
+      },
+      {
+        "title": "Custom Catering",
+        "description": "Personalized catering solutions tailored to any event. Your vision, our culinary expertise — the perfect pairing."
+      }
+    ]
+  },
+  "about": {
+    "title": "About Ria's Cuisine",
+    "subtitle": "Passionately bringing people together through exceptional food.",
+    "paragraph1": "Ria's Cuisine is passionate about bringing people together through exceptional food. While rooted in African culinary traditions, we create customized menus to suit every event and every guest.",
+    "paragraph2": "Our mission is to make every celebration memorable through outstanding cuisine and professional service.",
+    "tagline": "Made with love, served with passion",
+    "stats": {
+      "events": "Events Catered",
+      "guests": "Guests",
+      "dishes": "Dishes"
+    },
+    "award": "Award-Winning Catering Excellence"
+  },
+  "testimonials": {
+    "title": "What Our Clients Say",
+    "subtitle": "Hear from the clients who trust us to make their events extraordinary.",
+    "items": [
+      {
+        "name": "Sarah & James",
+        "role": "Wedding Clients",
+        "content": "Ria's Cuisine made our wedding day absolutely perfect. The food was outstanding, and the presentation was elegant. Our guests are still raving about the jollof rice!"
+      },
+      {
+        "name": "Michael T.",
+        "role": "Corporate Client",
+        "content": "We hired Ria's Cuisine for our annual conference. Professional, punctual, and the food was exceptional. They handled 300+ guests seamlessly."
+      },
+      {
+        "name": "Amara K.",
+        "role": "Birthday Organizer",
+        "content": "The customized menu for my son's birthday was a hit! The kids loved the food, and the adults appreciated the authentic African flavors. Highly recommend!"
+      },
+      {
+        "name": "Community Center",
+        "role": "Event Coordinator",
+        "content": "For our cultural festival, Ria's Cuisine delivered beyond expectations. Their ability to cater to diverse dietary needs while maintaining quality is impressive."
+      }
+    ]
+  },
+  "contact": {
+    "title": "Get in Touch",
+    "subtitle": "Ready to make your event unforgettable? Tell us about your event and we'll create the perfect menu.",
+    "labels": {
+      "name": "Full Name *",
+      "email": "Email Address *",
+      "phone": "Phone Number *",
+      "eventType": "Event Type *",
+      "eventDate": "Event Date *",
+      "guestCount": "Number of Guests *",
+      "venueLocation": "Venue Location *",
+      "budget": "Budget Range *",
+      "message": "Special Requests"
+    },
+    "placeholders": {
+      "name": "Your name",
+      "email": "your@email.com",
+      "phone": "0049 176 62028482",
+      "guestCount": "e.g. 100",
+      "venueLocation": "City or venue name",
+      "message": "Dietary restrictions, preferred cuisine, or any special requests..."
+    },
+    "eventTypes": {
+      "placeholder": "Select event type",
+      "items": ["Wedding", "Corporate Event", "Birthday Party", "Family Gathering", "Community Event", "Festival", "Private Party", "Other"]
+    },
+    "budgetRanges": {
+      "placeholder": "Select budget range",
+      "items": ["Under $500", "$500 - $1,000", "$1,000 - $3,000", "$3,000 - $5,000", "$5,000 - $10,000", "$10,000+"]
+    },
+    "errors": {
+      "nameMin": "Name must be at least 2 characters",
+      "email": "Please enter a valid email address",
+      "phone": "Please enter a valid phone number",
+      "eventType": "Please select an event type",
+      "eventDate": "Please select an event date",
+      "guestCount": "Please enter the number of guests",
+      "venueLocation": "Please enter a venue location",
+      "budget": "Please select a budget range"
+    },
+    "submit": "Send Inquiry",
+    "sending": "Sending...",
+    "success": "Thank you for your inquiry! We will get back to you within 24 hours.",
+    "error": "Something went wrong. Please try again."
+  },
+  "footer": {
+    "description": "Exceptional catering for every occasion. Bringing people together through unforgettable culinary experiences.",
+    "quickLinks": "Quick Links",
+    "contactInfo": "Contact Info",
+    "rights": "All rights reserved."
+  },
+  "language": {
+    "de": "Deutsch",
+    "en": "English",
+    "fr": "Français"
+  }
+}
