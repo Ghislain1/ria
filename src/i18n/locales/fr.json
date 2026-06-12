@@ -125,6 +125,7 @@
       "budget": "Veuillez sélectionner un budget"
     },
     "submit": "Envoyer la demande",
+    "whatsapp": "WhatsApp",
     "sending": "Envoi en cours...",
     "success": "Merci pour votre demande ! Nous vous répondrons sous 24 heures.",
     "error": "Une erreur est survenue. Veuillez réessayer."
@@ -134,6 +135,11 @@
     "quickLinks": "Liens rapides",
     "contactInfo": "Coordonnées",
     "rights": "Tous droits réservés."
+  },
+  "floatingButtons": {
+    "phone": "Appeler",
+    "email": "Envoyer un e-mail",
+    "whatsApp": "WhatsApp"
   },
   "language": {
     "de": "Deutsch",

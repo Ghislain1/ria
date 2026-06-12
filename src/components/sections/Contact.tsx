@@ -3,7 +3,7 @@ import { motion } from 'framer-motion'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from 'zod'
-import { Send, Loader2 } from 'lucide-react'
+import { Send, Loader2, MessageCircle } from 'lucide-react'
 import { toast } from 'sonner'
 import { useTranslation } from 'react-i18next'
 import { SectionWrapper } from '@/components/common/SectionWrapper'
@@ -184,24 +184,36 @@ export function Contact() {
           />
         </div>
 
-        <Button
-          type="submit"
-          size="lg"
-          disabled={submitting}
-          className="w-full md:w-auto"
-        >
-          {submitting ? (
-            <>
-              <Loader2 className="h-5 w-5 animate-spin" />
-              {t('contact.sending')}
-            </>
-          ) : (
-            <>
-              <Send className="h-5 w-5" />
-              {t('contact.submit')}
-            </>
-          )}
-        </Button>
+        <div className="flex flex-col sm:flex-row items-center gap-4">
+          <Button
+            type="submit"
+            size="lg"
+            disabled={submitting}
+            className="w-full sm:w-auto"
+          >
+            {submitting ? (
+              <>
+                <Loader2 className="h-5 w-5 animate-spin" />
+                {t('contact.sending')}
+              </>
+            ) : (
+              <>
+                <Send className="h-5 w-5" />
+                {t('contact.submit')}
+              </>
+            )}
+          </Button>
+
+          <a
+            href="https://wa.me/4917662028482"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 shadow-lg w-full sm:w-auto bg-[#25D366] hover:brightness-110"
+          >
+            <MessageCircle className="h-5 w-5" />
+            {t('contact.whatsapp')}
+          </a>
+        </div>
       </motion.form>
     </SectionWrapper>
   )

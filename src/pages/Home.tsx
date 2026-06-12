@@ -6,6 +6,7 @@ import { Services } from '@/components/sections/Services'
 import { About } from '@/components/sections/About'
 import { Testimonials } from '@/components/sections/Testimonials'
 import { Contact } from '@/components/sections/Contact'
+import { FloatingButtons } from '@/components/layout/FloatingButtons'
 
 export default function Home() {
   const { dark, toggle } = useTheme()
@@ -20,6 +21,7 @@ export default function Home() {
         <Testimonials />
         <Contact />
       </main>
+      <FloatingButtons />
       <Footer />
     </>
   )

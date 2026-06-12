@@ -157,7 +157,7 @@ export function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 0.7 }}
-          className="mt-16 flex items-center justify-center gap-8 md:gap-16"
+          className="mt-16 flex items-center justify-center gap-4 md:gap-6 flex-wrap"
         >
           {(t('hero.tags', { returnObjects: true }) as string[]).map(
             (item: string, i: number) => (
@@ -166,10 +166,14 @@ export function Hero() {
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: 0.8 + i * 0.1 }}
-                className="text-center"
+                className="relative"
               >
-                <div className="text-xs font-semibold uppercase tracking-wider text-[var(--color-text-muted)]">
-                  {item}
+                <div
+                  className="relative px-5 py-2 rounded-full border bg-[var(--color-bg)]/60 backdrop-blur-sm animate-burn"
+                >
+                  <span className="text-xs font-semibold uppercase tracking-wider text-[var(--color-primary)] text-glow">
+                    {item}
+                  </span>
                 </div>
               </motion.div>
             )

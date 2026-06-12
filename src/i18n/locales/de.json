@@ -125,6 +125,7 @@
       "budget": "Bitte wählen Sie einen Budgetrahmen"
     },
     "submit": "Anfrage senden",
+    "whatsapp": "WhatsApp",
     "sending": "Wird gesendet...",
     "success": "Vielen Dank für Ihre Anfrage! Wir werden uns innerhalb von 24 Stunden bei Ihnen melden.",
     "error": "Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut."
@@ -134,6 +135,11 @@
     "quickLinks": "Quicklinks",
     "contactInfo": "Kontaktinformationen",
     "rights": "Alle Rechte vorbehalten."
+  },
+  "floatingButtons": {
+    "phone": "Anrufen",
+    "email": "E-Mail senden",
+    "whatsApp": "WhatsApp"
   },
   "language": {
     "de": "Deutsch",
