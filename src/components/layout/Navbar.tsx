@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion } from 'framer-motion'
 import { Menu, X, ChefHat, ChevronDown } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import { ThemeToggle } from './ThemeToggle'
@@ -38,7 +38,11 @@ export function Navbar({ dark, onToggleTheme }: NavbarProps) {
   const handleClick = (href: string) => {
     setIsOpen(false)
     const el = document.querySelector(href)
-    el?.scrollIntoView({ behavior: 'smooth' })
+    if (el) {
+      const offset = 80
+      const top = el.getBoundingClientRect().top + window.scrollY - offset
+      window.scrollTo({ top, behavior: 'smooth' })
+    }
   }
 
   const navLinks = [
@@ -174,38 +178,35 @@ export function Navbar({ dark, onToggleTheme }: NavbarProps) {
         </div>
       </nav>
 
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-[var(--color-bg)] border-t border-[var(--color-border)] overflow-hidden"
-          >
-            <div className="px-5 py-6 flex flex-col gap-4">
-              {navLinks.map((link) => {
-                const section = link.href.replace('#', '')
-                const isActive = activeSection === section
-                return (
-                  <a
-                    key={link.href}
-                    href={link.href}
-                    onClick={(e) => { e.preventDefault(); handleClick(link.href) }}
-                    className={cn(
-                      'text-lg font-medium transition-colors',
-                      isActive
-                        ? 'text-[var(--color-primary)]'
-                        : 'text-[var(--color-text-muted)] hover:text-[var(--color-primary)]'
-                    )}
-                  >
-                    {link.label}
-                  </a>
-                )
-              })}
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+      {isOpen && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          className="md:hidden fixed inset-x-0 top-[73px] bottom-0 z-[9999] overflow-y-auto shadow-2xl"
+          style={{ backgroundColor: 'var(--color-bg)' }}>
+          <div className="px-5 py-8 flex flex-col gap-3">
+            {navLinks.map((link) => {
+              const section = link.href.replace('#', '')
+              const isActive = activeSection === section
+              return (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  onClick={(e) => { e.preventDefault(); handleClick(link.href) }}
+                  className={cn(
+                    'block px-4 py-3 rounded-xl text-lg font-medium transition-colors',
+                    isActive
+                      ? 'text-[var(--color-primary)] bg-[var(--color-primary)]/5'
+                      : 'text-[var(--color-text-muted)] hover:text-[var(--color-primary)] hover:bg-[var(--color-bg-alt)]'
+                  )}
+                >
+                  {link.label}
+                </a>
+              )
+            })}
+          </div>
+        </motion.div>
+      )}
     </header>
   )
 }

@@ -5,7 +5,7 @@ import { SectionWrapper } from '@/components/common/SectionWrapper'
 import { SectionHeading } from '@/components/common/SectionHeading'
 import { CountUp } from '@/components/common/CountUp'
 
-const particles = Array.from({ length: 18 }, (_, i) => ({
+const particles = Array.from({ length: 108 }, (_, i) => ({
   id: i,
   x: Math.random() * 100,
   y: Math.random() * 100,
@@ -19,7 +19,7 @@ export function About() {
   const { t } = useTranslation()
 
   const stats = [
-    { label: t('about.stats.events'), value: 500, suffix: '+' },
+    { label: t('about.stats.events'), value: 99, suffix: '+' },
     { label: t('about.stats.guests'), value: 10000, suffix: '+' },
     { label: t('about.stats.dishes'), value: 50, suffix: '+' },
   ]
