@@ -1,17 +1,8 @@
-import { useEffect, lazy, Suspense } from 'react'
+import { useEffect } from 'react'
 import { Helmet } from 'react-helmet-async'
+import { Outlet } from 'react-router-dom'
 import { Toaster } from 'sonner'
 import { useTranslation } from 'react-i18next'
-
-const Home = lazy(() => import('@/pages/Home'))
-
-function LoadingSpinner() {
-  return (
-    <div className="min-h-screen flex items-center justify-center bg-(--color-bg)">
-      <div className="animate-spin rounded-full h-12 w-12 border-4 border-(--color-border) border-t-(--color-primary)" />
-    </div>
-  )
-}
 
 export function App() {
   const { i18n } = useTranslation()
@@ -53,9 +44,7 @@ export function App() {
         <title>Ria's Cuisine | Exceptional Catering for Every Occasion</title>
       </Helmet>
 
-      <Suspense fallback={<LoadingSpinner />}>
-        <Home />
-      </Suspense>
+      <Outlet />
 
       <Toaster
         position="top-center"
