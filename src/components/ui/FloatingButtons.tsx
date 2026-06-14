@@ -33,7 +33,7 @@ export function FloatingButtons() {
           type="button"
           onClick={scrollToTop}
           aria-label="Scroll to top"
-          className="flex h-12 w-12 items-center justify-center rounded-full bg-(--color-primary) text-white shadow-lg transition-all duration-300 hover:bg-(--color-primary-dark) hover:scale-110"
+          className="flex h-12 w-12 items-center justify-center rounded-full bg-(--color-primary) text-white shadow-lg"
         >
           <ArrowUp className="h-5 w-5" />
         </button>
@@ -47,7 +47,7 @@ export function FloatingButtons() {
             title={t(labelKey)}
             target={href.startsWith('http') ? '_blank' : undefined}
             rel={href.startsWith('http') ? 'noopener noreferrer' : undefined}
-            className="flex h-12 w-12 items-center justify-center rounded-full bg-(--color-primary) text-white shadow-lg transition-all duration-300 hover:bg-(--color-primary-dark) hover:scale-110"
+            className="flex h-12 w-12 items-center justify-center rounded-full bg-(--color-primary) text-white shadow-lg"
           >
             <Icon className="h-5 w-5" />
           </a>
