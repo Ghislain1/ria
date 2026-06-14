@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { Menu, X, ChefHat, ChevronDown } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
-import { ThemeToggle } from './ThemeToggle'
+import { ThemeToggle } from '../ui/ThemeToggle'
 import { useScrollSpy } from '@/hooks/useScrollSpy'
 import { cn } from '@/utils/cn'
 
@@ -144,7 +144,7 @@ export function Navbar({ dark, onToggleTheme }: NavbarProps) {
               className="flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-sm font-medium text-[var(--color-text-muted)] border border-[var(--color-border)] cursor-pointer"
             >
               {i18n.language.toUpperCase()}
-              <ChevronDown className={`h-3 w-3 transition-transform ${langOpen ? 'rotate-180' : ''}`} />
+              <ChevronDown className={`h-3 w-3 ${langOpen ? 'rotate-180' : ''}`} />
             </button>
             {langOpen && (
               <>
@@ -154,7 +154,7 @@ export function Navbar({ dark, onToggleTheme }: NavbarProps) {
                     <button
                       key={l.code}
                       onClick={() => changeLang(l.code)}
-                      className={`w-full px-4 py-2 text-sm text-left transition-colors cursor-pointer
+                      className={`w-full px-4 py-2 text-sm text-left cursor-pointer
                         ${i18n.language === l.code
                           ? 'text-[var(--color-primary)] font-semibold bg-[var(--color-primary)]/5'
                           : 'text-[var(--color-text-muted)] hover:text-[var(--color-text)] hover:bg-[var(--color-bg-alt)]'
@@ -175,7 +175,9 @@ export function Navbar({ dark, onToggleTheme }: NavbarProps) {
           >
             {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
+          <h1>GHHH</h1>
         </div>
+
       </nav>
 
       {isOpen && (

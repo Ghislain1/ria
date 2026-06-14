@@ -20,7 +20,7 @@ export function About() {
 
   const stats = [
     { label: t('about.stats.events'), value: 99, suffix: '+' },
-    { label: t('about.stats.guests'), value: 10000, suffix: '+' },
+    { label: t('about.stats.guests'), value: 15000, suffix: '+' },
     { label: t('about.stats.dishes'), value: 50, suffix: '+' },
   ]
 
