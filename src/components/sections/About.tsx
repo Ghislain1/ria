@@ -65,18 +65,18 @@ export function About() {
             transition={{ duration: 0.6 }}
           >
             <div className="relative">
-              <div className="absolute -top-4 -left-4 w-full h-full rounded-2xl border-2 border-[var(--color-primary)]/20" />
-              <div className="relative p-8 md:p-10 rounded-2xl bg-[var(--color-bg-alt)] border border-[var(--color-border)]">
-                <ChefHat className="h-10 w-10 text-[var(--color-primary)] mb-6" />
-                <p className="text-[var(--color-text-muted)] leading-relaxed mb-6 text-lg">
+              <div className="absolute -top-4 -left-4 w-full h-full rounded-2xl border-2 border-(--color-primary)/20" />
+              <div className="relative p-8 md:p-10 rounded-2xl bg-(--color-bg-alt) border border-(--color-border)">
+                <ChefHat className="h-10 w-10 text-(--color-primary) mb-6" />
+                <p className="text-(--color-text-muted) leading-relaxed mb-6 text-lg">
                   {t('about.paragraph1')}
                 </p>
-                <p className="text-[var(--color-text-muted)] leading-relaxed text-lg">
+                <p className="text-(--color-text-muted) leading-relaxed text-lg">
                   {t('about.paragraph2')}
                 </p>
 
-                <div className="mt-8 flex items-center gap-3 text-[var(--color-text)] font-semibold">
-                  <Heart className="h-5 w-5 text-[var(--color-primary)]" />
+                <div className="mt-8 flex items-center gap-3 text-(--color-text) font-semibold">
+                  <Heart className="h-5 w-5 text-(--color-primary)" />
                   {t('about.tagline')}
                 </div>
               </div>
@@ -93,19 +93,19 @@ export function About() {
             {stats.map((stat) => (
               <div
                 key={stat.label}
-                className="p-6 rounded-2xl bg-[var(--color-bg-alt)] border border-[var(--color-border)] text-center"
+                className="p-6 rounded-2xl bg-(--color-bg-alt) border border-(--color-border) text-center"
               >
-                <div className="text-3xl md:text-4xl font-bold text-[var(--color-primary)] mb-2">
+                <div className="text-3xl md:text-4xl font-bold text-(--color-primary) mb-2">
                   <CountUp end={stat.value} duration={2.5} suffix={stat.suffix} />
                 </div>
-                <div className="text-sm font-medium text-[var(--color-text-muted)]">
+                <div className="text-sm font-medium text-(--color-text-muted)">
                   {stat.label}
                 </div>
               </div>
             ))}
-            <div className="col-span-full p-6 rounded-2xl bg-[var(--color-primary)]/5 border border-[var(--color-primary)]/20 text-center">
-              <Award className="h-8 w-8 text-[var(--color-primary)] mx-auto mb-2" />
-              <p className="text-[var(--color-text)] font-semibold">
+            <div className="col-span-full p-6 rounded-2xl bg-(--color-primary)/5 border border-(--color-primary)/20 text-center">
+              <Award className="h-8 w-8 text-(--color-primary) mx-auto mb-2" />
+              <p className="text-(--color-text) font-semibold">
                 {t('about.award')}
               </p>
             </div>
@@ -115,3 +115,4 @@ export function About() {
     </SectionWrapper>
   )
 }
+

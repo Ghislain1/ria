@@ -63,7 +63,7 @@ export function Navbar({ dark, onToggleTheme }: NavbarProps) {
       className={cn(
         'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
         scrolled
-          ? 'bg-[var(--color-bg)]/95 backdrop-blur-md shadow-sm border-b border-[var(--color-border)]'
+          ? 'bg-(--color-bg)/95 backdrop-blur-md shadow-sm border-b border-(--color-border)'
           : 'bg-transparent'
       )}
     >
@@ -71,9 +71,9 @@ export function Navbar({ dark, onToggleTheme }: NavbarProps) {
         <a
           href="#hero"
           onClick={(e) => { e.preventDefault(); handleClick('#hero') }}
-          className="flex items-center gap-2 text-xl font-bold text-[var(--color-text)] hover:text-[var(--color-primary)] transition-colors"
+          className="flex items-center gap-2 text-xl font-bold text-(--color-text) hover:text-(--color-primary) transition-colors"
         >
-          <ChefHat className="h-7 w-7 text-[var(--color-primary)]" />
+          <ChefHat className="h-7 w-7 text-(--color-primary)" />
           <span>Ria's Cuisine</span>
         </a>
 
@@ -89,15 +89,15 @@ export function Navbar({ dark, onToggleTheme }: NavbarProps) {
                 className={cn(
                   'relative text-sm font-medium transition-colors',
                   isActive
-                    ? 'text-[var(--color-primary)]'
-                    : 'text-[var(--color-text-muted)] hover:text-[var(--color-primary)]'
+                    ? 'text-(--color-primary)'
+                    : 'text-(--color-text-muted) hover:text-(--color-primary)'
                 )}
               >
                 {link.label}
                 {isActive && (
                   <motion.div
                     layoutId="nav-indicator"
-                    className="absolute -bottom-1.5 left-0 right-0 h-0.5 rounded-full bg-[var(--color-primary)]"
+                    className="absolute -bottom-1.5 left-0 right-0 h-0.5 rounded-full bg-(--color-primary)"
                   />
                 )}
               </a>
@@ -107,7 +107,7 @@ export function Navbar({ dark, onToggleTheme }: NavbarProps) {
           <div className="relative">
             <button
               onClick={() => setLangOpen(!langOpen)}
-              className="flex items-center gap-1 px-3 py-1.5 rounded-lg text-sm font-medium text-[var(--color-text-muted)] hover:text-[var(--color-primary)] border border-[var(--color-border)] hover:border-[var(--color-primary)]/30 transition-colors cursor-pointer"
+              className="flex items-center gap-1 px-3 py-1.5 rounded-lg text-sm font-medium text-(--color-text-muted) hover:text-(--color-primary) border border-(--color-border) hover:border-(--color-primary)/30 transition-colors cursor-pointer"
             >
               {i18n.language.toUpperCase()}
               <ChevronDown className={`h-3.5 w-3.5 transition-transform duration-200 ${langOpen ? 'rotate-180' : ''}`} />
@@ -115,15 +115,15 @@ export function Navbar({ dark, onToggleTheme }: NavbarProps) {
             {langOpen && (
               <>
                 <div className="fixed inset-0 z-10" onClick={() => setLangOpen(false)} />
-                <div className="absolute right-0 mt-1.5 z-20 bg-[var(--color-surface)] border border-[var(--color-border)] rounded-xl shadow-lg overflow-hidden min-w-[120px]">
+                <div className="absolute right-0 mt-1.5 z-20 bg-(--color-surface) border border-(--color-border) rounded-xl shadow-lg overflow-hidden min-w-30">
                   {langs.map((l) => (
                     <button
                       key={l.code}
                       onClick={() => changeLang(l.code)}
                       className={`w-full px-4 py-2 text-sm text-left transition-colors cursor-pointer
                         ${i18n.language === l.code
-                          ? 'text-[var(--color-primary)] font-semibold bg-[var(--color-primary)]/5'
-                          : 'text-[var(--color-text-muted)] hover:text-[var(--color-text)] hover:bg-[var(--color-bg-alt)]'
+                          ? 'text-(--color-primary) font-semibold bg-(--color-primary)/5'
+                          : 'text-(--color-text-muted) hover:text-(--color-text) hover:bg-(--color-bg-alt)'
                         }`}
                     >
                       {l.label} — {t(`language.${l.code}`)}
@@ -141,7 +141,7 @@ export function Navbar({ dark, onToggleTheme }: NavbarProps) {
           <div className="relative">
             <button
               onClick={() => setLangOpen(!langOpen)}
-              className="flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-sm font-medium text-[var(--color-text-muted)] border border-[var(--color-border)] cursor-pointer"
+              className="flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-sm font-medium text-(--color-text-muted) border border-(--color-border) cursor-pointer"
             >
               {i18n.language.toUpperCase()}
               <ChevronDown className={`h-3 w-3 ${langOpen ? 'rotate-180' : ''}`} />
@@ -149,15 +149,15 @@ export function Navbar({ dark, onToggleTheme }: NavbarProps) {
             {langOpen && (
               <>
                 <div className="fixed inset-0 z-10" onClick={() => setLangOpen(false)} />
-                <div className="absolute right-0 mt-1.5 z-20 bg-[var(--color-surface)] border border-[var(--color-border)] rounded-xl shadow-lg overflow-hidden min-w-[120px]">
+                <div className="absolute right-0 mt-1.5 z-20 bg-(--color-surface) border border-(--color-border) rounded-xl shadow-lg overflow-hidden min-w-30">
                   {langs.map((l) => (
                     <button
                       key={l.code}
                       onClick={() => changeLang(l.code)}
                       className={`w-full px-4 py-2 text-sm text-left cursor-pointer
                         ${i18n.language === l.code
-                          ? 'text-[var(--color-primary)] font-semibold bg-[var(--color-primary)]/5'
-                          : 'text-[var(--color-text-muted)] hover:text-[var(--color-text)] hover:bg-[var(--color-bg-alt)]'
+                          ? 'text-(--color-primary) font-semibold bg-(--color-primary)/5'
+                          : 'text-(--color-text-muted) hover:text-(--color-text) hover:bg-(--color-bg-alt)'
                         }`}
                     >
                       {t(`language.${l.code}`)}
@@ -169,13 +169,15 @@ export function Navbar({ dark, onToggleTheme }: NavbarProps) {
           </div>
           <ThemeToggle dark={dark} onToggle={onToggleTheme} />
           <button
-            onClick={() => setIsOpen(!isOpen)}
+            onClick={() => {
+              setLangOpen(false)
+              setIsOpen((prev) => !prev)
+            }}
             aria-label={isOpen ? 'Close menu' : 'Open menu'}
-            className="p-2 text-[var(--color-text)] cursor-pointer"
+            className="relative z-20 p-2 text-(--color-text) cursor-pointer"
           >
             {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
-          <h1>GHHH</h1>
         </div>
 
       </nav>
@@ -184,7 +186,7 @@ export function Navbar({ dark, onToggleTheme }: NavbarProps) {
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          className="md:hidden fixed inset-x-0 top-[73px] bottom-0 z-[9999] overflow-y-auto shadow-2xl"
+          className="md:hidden fixed inset-x-0 top-18.25 bottom-0 z-9999 overflow-y-auto shadow-2xl"
           style={{ backgroundColor: 'var(--color-bg)' }}>
           <div className="px-5 py-8 flex flex-col gap-3">
             {navLinks.map((link) => {
@@ -198,8 +200,8 @@ export function Navbar({ dark, onToggleTheme }: NavbarProps) {
                   className={cn(
                     'block px-4 py-3 rounded-xl text-lg font-medium transition-colors',
                     isActive
-                      ? 'text-[var(--color-primary)] bg-[var(--color-primary)]/5'
-                      : 'text-[var(--color-text-muted)] hover:text-[var(--color-primary)] hover:bg-[var(--color-bg-alt)]'
+                      ? 'text-(--color-primary) bg-(--color-primary)/5'
+                      : 'text-(--color-text-muted) hover:text-(--color-primary) hover:bg-(--color-bg-alt)'
                   )}
                 >
                   {link.label}
@@ -212,3 +214,4 @@ export function Navbar({ dark, onToggleTheme }: NavbarProps) {
     </header>
   )
 }
+

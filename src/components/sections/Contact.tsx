@@ -60,9 +60,9 @@ export function Contact() {
   }
 
   const inputClass =
-    'w-full px-4 py-3 rounded-xl bg-[var(--color-bg)] border border-[var(--color-border)] text-[var(--color-text)] placeholder:text-[var(--color-text-muted)] focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)]/50 focus:border-[var(--color-primary)] transition-all duration-200'
+    'w-full px-4 py-3 rounded-xl bg-(--color-bg) border border-(--color-border) text-(--color-text) placeholder:text-(--color-text-muted) focus:outline-none focus:ring-2 focus:ring-(--color-primary)/50 focus:border-(--color-primary) transition-all duration-200'
 
-  const labelClass = 'block text-sm font-medium text-[var(--color-text)] mb-1.5'
+  const labelClass = 'block text-sm font-medium text-(--color-text) mb-1.5'
   const errorClass = 'text-sm text-red-500 mt-1'
 
   return (
@@ -218,3 +218,4 @@ export function Contact() {
     </SectionWrapper>
   )
 }
+

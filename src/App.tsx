@@ -7,8 +7,8 @@ const Home = lazy(() => import('@/pages/Home'))
 
 function LoadingSpinner() {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-[var(--color-bg)]">
-      <div className="animate-spin rounded-full h-12 w-12 border-4 border-[var(--color-border)] border-t-[var(--color-primary)]" />
+    <div className="min-h-screen flex items-center justify-center bg-(--color-bg)">
+      <div className="animate-spin rounded-full h-12 w-12 border-4 border-(--color-border) border-t-(--color-primary)" />
     </div>
   )
 }
@@ -70,3 +70,4 @@ export function App() {
     </>
   )
 }
+

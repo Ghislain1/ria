@@ -42,9 +42,9 @@ export function Hero() {
           style={{ backgroundImage: 'url(/hero-bg.jpg)' }}
         />
 
-        <div className="absolute inset-0 bg-gradient-to-r from-[var(--color-bg)]/85 via-[var(--color-bg)]/70 to-[var(--color-bg)]/85" />
+        <div className="absolute inset-0 bg-gradient-to-r from-(--color-bg)/85 via-(--color-bg)/70 to-(--color-bg)/85" />
 
-        <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-bg)] via-transparent to-[var(--color-bg)]/30" />
+        <div className="absolute inset-0 bg-gradient-to-t from-(--color-bg) via-transparent to-(--color-bg)/30" />
 
         <motion.div
           animate={{
@@ -52,7 +52,7 @@ export function Hero() {
             rotate: [0, 5, 0],
           }}
           transition={{ duration: 20, ease: 'easeInOut', repeat: Infinity }}
-          className="absolute -top-32 -right-32 w-96 h-96 rounded-full bg-[var(--color-primary)]/10 blur-3xl"
+          className="absolute -top-32 -right-32 w-96 h-96 rounded-full bg-(--color-primary)/10 blur-3xl"
         />
 
         <motion.div
@@ -61,7 +61,7 @@ export function Hero() {
             rotate: [0, -5, 0],
           }}
           transition={{ duration: 18, ease: 'easeInOut', repeat: Infinity }}
-          className="absolute -bottom-40 -left-40 w-[30rem] h-[30rem] rounded-full bg-[var(--color-secondary)]/10 blur-3xl"
+          className="absolute -bottom-40 -left-40 w-[30rem] h-[30rem] rounded-full bg-(--color-secondary)/10 blur-3xl"
         />
       </motion.div>
 
@@ -73,7 +73,7 @@ export function Hero() {
           initial={{ opacity: 0, y: -20, scale: 0.95 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
           transition={{ duration: 0.6, ease: 'easeOut' }}
-          className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[var(--color-primary)]/10 border border-[var(--color-primary)]/20 text-sm font-medium text-[var(--color-primary)] mb-8"
+          className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-(--color-primary)/10 border border-(--color-primary)/20 text-sm font-medium text-(--color-primary) mb-8"
         >
           <motion.span
             animate={{ rotate: [0, 15, -15, 0] }}
@@ -88,12 +88,12 @@ export function Hero() {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.15, ease: [0.25, 0.46, 0.45, 0.94] }}
-          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-[var(--color-text)] leading-[1.1] mb-6"
+          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-(--color-text) leading-[1.1] mb-6"
         >
           {t('hero.title')}
           <br />
           <motion.span
-            className="text-[var(--color-primary)] inline-block"
+            className="text-(--color-primary) inline-block"
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.5 }}
@@ -106,7 +106,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.35 }}
-          className="text-lg md:text-xl text-[var(--color-text-muted)] max-w-2xl mx-auto mb-10 leading-relaxed"
+          className="text-lg md:text-xl text-(--color-text-muted) max-w-2xl mx-auto mb-10 leading-relaxed"
         >
           {t('hero.subtitle')}
         </motion.p>
@@ -169,9 +169,9 @@ export function Hero() {
                 className="relative"
               >
                 <div
-                  className="relative px-5 py-2 rounded-full border bg-[var(--color-bg)]/60 backdrop-blur-sm animate-burn"
+                  className="relative px-5 py-2 rounded-full border bg-(--color-bg)/60 backdrop-blur-sm animate-burn"
                 >
-                  <span className="text-xs font-semibold uppercase tracking-wider text-[var(--color-primary)] text-glow">
+                  <span className="text-xs font-semibold uppercase tracking-wider text-(--color-primary) text-glow">
                     {item}
                   </span>
                 </div>
@@ -183,3 +183,4 @@ export function Hero() {
     </section>
   )
 }
+

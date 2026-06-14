@@ -70,7 +70,7 @@ export function Testimonials() {
       <div className="relative max-w-3xl mx-auto">
         <div className="relative min-h-[280px] flex items-center justify-center">
           <div className="absolute -top-8 left-1/2 -translate-x-1/2">
-            <Quote className="h-12 w-12 text-[var(--color-primary)]/20" />
+            <Quote className="h-12 w-12 text-(--color-primary)/20" />
           </div>
 
           <motion.div
@@ -87,20 +87,20 @@ export function Testimonials() {
               {[...Array(5)].map((_, i) => (
                 <Star
                   key={i}
-                  className="h-5 w-5 fill-[var(--color-primary)] text-[var(--color-primary)]"
+                  className="h-5 w-5 fill-(--color-primary) text-(--color-primary)"
                 />
               ))}
             </div>
 
-            <blockquote className="text-xl md:text-2xl text-[var(--color-text)] leading-relaxed mb-8 italic">
+            <blockquote className="text-xl md:text-2xl text-(--color-text) leading-relaxed mb-8 italic">
               &ldquo;{testimonial.content}&rdquo;
             </blockquote>
 
             <div>
-              <div className="font-bold text-[var(--color-text)]">
+              <div className="font-bold text-(--color-text)">
                 {testimonial.name}
               </div>
-              <div className="text-sm text-[var(--color-text-muted)]">
+              <div className="text-sm text-(--color-text-muted)">
                 {testimonial.role}
               </div>
             </div>
@@ -111,8 +111,8 @@ export function Testimonials() {
           <button
             onClick={prev}
             aria-label="Previous testimonial"
-            className="p-2 rounded-full bg-[var(--color-surface)] border border-[var(--color-border)]
-              text-[var(--color-text-muted)] hover:text-[var(--color-primary)] hover:border-[var(--color-primary)]/30 
+            className="p-2 rounded-full bg-(--color-surface) border border-(--color-border)
+              text-(--color-text-muted) hover:text-(--color-primary) hover:border-(--color-primary)/30 
               transition-all cursor-pointer"
           >
             <ChevronLeft className="h-5 w-5" />
@@ -126,8 +126,8 @@ export function Testimonials() {
                 aria-label={`Go to testimonial ${index + 1}`}
                 className={`h-2 rounded-full transition-all duration-300 cursor-pointer ${
                   index === current
-                    ? 'w-8 bg-[var(--color-primary)]'
-                    : 'w-2 bg-[var(--color-border)] hover:bg-[var(--color-text-muted)]'
+                    ? 'w-8 bg-(--color-primary)'
+                    : 'w-2 bg-(--color-border) hover:bg-(--color-text-muted)'
                 }`}
               />
             ))}
@@ -136,8 +136,8 @@ export function Testimonials() {
           <button
             onClick={next}
             aria-label="Next testimonial"
-            className="p-2 rounded-full bg-[var(--color-surface)] border border-[var(--color-border)]
-              text-[var(--color-text-muted)] hover:text-[var(--color-primary)] hover:border-[var(--color-primary)]/30 
+            className="p-2 rounded-full bg-(--color-surface) border border-(--color-border)
+              text-(--color-text-muted) hover:text-(--color-primary) hover:border-(--color-primary)/30 
               transition-all cursor-pointer"
           >
             <ChevronRight className="h-5 w-5" />
@@ -147,3 +147,4 @@ export function Testimonials() {
     </SectionWrapper>
   )
 }
+

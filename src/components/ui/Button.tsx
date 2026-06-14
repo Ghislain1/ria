@@ -18,24 +18,24 @@ export function Button({
     <button
       className={cn(
         'inline-flex items-center justify-center gap-2 rounded-full font-semibold transition-all duration-300 cursor-pointer',
-        'focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-primary)]',
+        'focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--color-primary)',
         'disabled:opacity-50 disabled:cursor-not-allowed',
         variant === 'primary' && [
-          'bg-[var(--color-primary)] text-white',
-          'hover:bg-[var(--color-primary-dark)]',
-          'shadow-lg shadow-[var(--color-primary)]/25',
-          'hover:shadow-xl hover:shadow-[var(--color-primary)]/30',
+          'bg-(--color-primary) text-white',
+          'hover:bg-(--color-primary-dark)',
+          'shadow-lg shadow-(--color-primary)/25',
+          'hover:shadow-xl hover:shadow-(--color-primary)/30',
           'hover:-translate-y-0.5',
         ],
         variant === 'secondary' && [
-          'bg-[var(--color-secondary)] text-white',
-          'hover:bg-[var(--color-secondary)]/90',
-          'shadow-lg shadow-[var(--color-secondary)]/25',
+          'bg-(--color-secondary) text-white',
+          'hover:bg-(--color-secondary)/90',
+          'shadow-lg shadow-(--color-secondary)/25',
           'hover:-translate-y-0.5',
         ],
         variant === 'outline' && [
-          'border-2 border-[var(--color-primary)] text-[var(--color-primary)]',
-          'hover:bg-[var(--color-primary)] hover:text-white',
+          'border-2 border-(--color-primary) text-(--color-primary)',
+          'hover:bg-(--color-primary) hover:text-white',
         ],
         size === 'sm' && 'px-4 py-2 text-sm',
         size === 'md' && 'px-6 py-3 text-base',
@@ -48,3 +48,4 @@ export function Button({
     </button>
   )
 }
+

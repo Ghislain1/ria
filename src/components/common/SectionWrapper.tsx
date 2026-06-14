@@ -20,7 +20,7 @@ export function SectionWrapper({
       id={id}
       className={cn(
         'py-20 md:py-28 px-5',
-        dark && 'bg-[var(--color-bg-alt)]',
+        dark && 'bg-(--color-bg-alt)',
         className
       )}
     >
@@ -36,3 +36,4 @@ export function SectionWrapper({
     </section>
   )
 }
+

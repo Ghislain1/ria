@@ -26,14 +26,15 @@ export function SectionHeading({
         className
       )}
     >
-      <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[var(--color-text)] mb-4">
+      <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-(--color-text) mb-4">
         {title}
       </h2>
       {subtitle && (
-        <p className="text-lg text-[var(--color-text-muted)] leading-relaxed">
+        <p className="text-lg text-(--color-text-muted) leading-relaxed">
           {subtitle}
         </p>
       )}
     </motion.div>
   )
 }
+
