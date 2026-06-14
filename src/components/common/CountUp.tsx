@@ -6,7 +6,7 @@ interface CountUpProps {
   suffix?: string
 }
 
-export function CountUp({ end, duration = 2, suffix = '+' }: CountUpProps) {
+export function CountUp({ end, duration = 4, suffix = '+' }: CountUpProps) {
   const [value, setValue] = useState(0)
   const startRef = useRef(0)
   const rafRef = useRef<number>(0)

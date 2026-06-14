@@ -87,10 +87,9 @@ export function Navbar({ dark, onToggleTheme }: NavbarProps) {
                 href={link.href}
                 onClick={(e) => { e.preventDefault(); handleClick(link.href) }}
                 className={cn(
-                  'relative text-sm font-medium transition-colors',
-                  isActive
-                    ? 'text-(--color-primary)'
-                    : 'text-(--color-text-muted) hover:text-(--color-primary)'
+                  'relative text-sm font-medium transition-colors', isActive
+                  ? 'text-(--color-primary)'
+                  : 'text-(--color-text-muted) hover:text-(--color-primary)'
                 )}
               >
                 {link.label}
