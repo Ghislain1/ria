@@ -1,4 +1,4 @@
-import { motion, useReducedMotion } from 'framer-motion'
+import { m, useReducedMotion } from 'framer-motion'
 import { ChefHat, Award, Heart } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import { SectionWrapper } from '@/components/common/SectionWrapper'
@@ -29,7 +29,7 @@ export function About() {
     <SectionWrapper id="about">
       <div className="relative">
         {!prefersReducedMotion && particles.map((p) => (
-          <motion.div
+          <m.div
             key={p.id}
             className="absolute rounded-full pointer-events-none hidden lg:block"
             style={{
@@ -59,7 +59,7 @@ export function About() {
         />
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
-          <motion.div
+          <m.div
             initial={prefersReducedMotion ? undefined : { opacity: 0, x: -30 }}
             whileInView={prefersReducedMotion ? undefined : { opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -82,9 +82,9 @@ export function About() {
                 </div>
               </div>
             </div>
-          </motion.div>
+          </m.div>
 
-          <motion.div
+          <m.div
             initial={prefersReducedMotion ? undefined : { opacity: 0, x: 30 }}
             whileInView={prefersReducedMotion ? undefined : { opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -110,7 +110,7 @@ export function About() {
                 {t('about.award')}
               </p>
             </div>
-          </motion.div>
+          </m.div>
         </div>
       </div>
     </SectionWrapper>

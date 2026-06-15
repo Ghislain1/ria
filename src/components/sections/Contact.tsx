@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { motion, useReducedMotion } from 'framer-motion'
+import { m, useReducedMotion } from 'framer-motion'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from 'zod'
@@ -20,7 +20,7 @@ export function Contact() {
 
   const contactSchema = z.object({
     name: z.string().min(2, t('contact.errors.nameMin')),
-    email: z.string().email(t('contact.errors.email')),
+    email: z.email({ message: t('contact.errors.email') }),
     phone: z.string().min(7, t('contact.errors.phone')),
     eventType: z.string().min(1, t('contact.errors.eventType')),
     eventDate: z.string().min(1, t('contact.errors.eventDate')),
@@ -72,7 +72,7 @@ export function Contact() {
         subtitle={t('contact.subtitle')}
       />
 
-      <motion.form
+      <m.form
         initial={prefersReducedMotion ? undefined : { opacity: 0, y: 20 }}
         whileInView={prefersReducedMotion ? undefined : { opacity: 1, y: 0 }}
         viewport={{ once: true }}
@@ -214,7 +214,7 @@ export function Contact() {
             {t('contact.whatsapp')}
           </a>
         </div>
-      </motion.form>
+      </m.form>
     </SectionWrapper>
   )
 }

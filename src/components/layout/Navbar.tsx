@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { motion } from 'framer-motion'
+import { m } from 'framer-motion'
 import { Menu, X, ChefHat, ChevronDown } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import { ThemeToggle } from '../ui/ThemeToggle'
@@ -69,6 +69,7 @@ export function Navbar({ dark, onToggleTheme }: NavbarProps) {
     >
       <nav className="max-w-7xl mx-auto px-5 py-4 flex items-center justify-between">
         <button
+          type="button"
           onKeyDown={() => void 0}
           onClick={(e) => { e.preventDefault(); handleClick('#hero') }}
           className="flex items-center gap-2 text-xl font-bold text-(--color-text) hover:text-(--color-primary) transition-colors"
@@ -94,7 +95,7 @@ export function Navbar({ dark, onToggleTheme }: NavbarProps) {
               >
                 {link.label}
                 {isActive && (
-                  <motion.div
+                  <m.div
                     layoutId="nav-indicator"
                     className="absolute -bottom-1.5 left-0 right-0 h-0.5 rounded-full bg-(--color-primary)"
                   />
@@ -105,6 +106,7 @@ export function Navbar({ dark, onToggleTheme }: NavbarProps) {
 
           <div className="relative">
             <button
+              type="button"
               onClick={() => setLangOpen(!langOpen)}
               className="flex items-center gap-1 px-3 py-1.5 rounded-lg text-sm font-medium text-(--color-text-muted) hover:text-(--color-primary) border border-(--color-border) hover:border-(--color-primary)/30 transition-colors cursor-pointer"
             >
@@ -117,6 +119,7 @@ export function Navbar({ dark, onToggleTheme }: NavbarProps) {
                 <div className="absolute right-0 mt-1.5 z-20 bg-(--color-surface) border border-(--color-border) rounded-xl shadow-lg overflow-hidden min-w-30">
                   {langs.map((l) => (
                     <button
+                      type="button"
                       key={l.code}
                       onClick={() => changeLang(l.code)}
                       className={`w-full px-4 py-2 text-sm text-left transition-colors cursor-pointer
@@ -139,6 +142,7 @@ export function Navbar({ dark, onToggleTheme }: NavbarProps) {
         <div className="flex items-center gap-3 md:hidden">
           <div className="relative">
             <button
+              type="button"
               onClick={() => setLangOpen(!langOpen)}
               className="flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-sm font-medium text-(--color-text-muted) border border-(--color-border) cursor-pointer"
             >
@@ -151,6 +155,7 @@ export function Navbar({ dark, onToggleTheme }: NavbarProps) {
                 <div className="absolute right-0 mt-1.5 z-20 bg-(--color-surface) border border-(--color-border) rounded-xl shadow-lg overflow-hidden min-w-30">
                   {langs.map((l) => (
                     <button
+                      type="button"
                       key={l.code}
                       onClick={() => changeLang(l.code)}
                       className={`w-full px-4 py-2 text-sm text-left cursor-pointer
@@ -168,6 +173,7 @@ export function Navbar({ dark, onToggleTheme }: NavbarProps) {
           </div>
           <ThemeToggle dark={dark} onToggle={onToggleTheme} />
           <button
+            type="button"
             onClick={() => {
               setLangOpen(false)
               setIsOpen((prev) => !prev)

@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 import { Helmet } from 'react-helmet-async'
 import { Outlet } from 'react-router-dom'
 import { Toaster } from 'sonner'
+import { LazyMotion, domMax } from 'framer-motion'
 import { useTranslation } from 'react-i18next'
 
 export function App() {
@@ -44,7 +45,9 @@ export function App() {
         <title>Ria's Cuisine | Exceptional Catering for Every Occasion</title>
       </Helmet>
 
-      <Outlet />
+      <LazyMotion features={domMax}>
+        <Outlet />
+      </LazyMotion>
 
       <Toaster
         position="top-center"

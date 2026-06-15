@@ -1,4 +1,4 @@
-import { motion, useReducedMotion } from 'framer-motion'
+import { m, useReducedMotion } from 'framer-motion'
 import { cn } from '@/utils/cn'
 
 interface SectionHeadingProps {
@@ -17,7 +17,7 @@ export function SectionHeading({
   const prefersReducedMotion = useReducedMotion()
 
   return (
-    <motion.div
+    <m.div
       initial={prefersReducedMotion ? undefined : { opacity: 0, y: 20 }}
       whileInView={prefersReducedMotion ? undefined : { opacity: 1, y: 0 }}
       viewport={{ once: true }}
@@ -36,7 +36,7 @@ export function SectionHeading({
           {subtitle}
         </p>
       )}
-    </motion.div>
+    </m.div>
   )
 }
 

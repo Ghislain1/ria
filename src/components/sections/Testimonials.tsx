@@ -1,5 +1,5 @@
 import { useState, useCallback, useEffect } from 'react'
-import { motion } from 'framer-motion'
+import { m } from 'framer-motion'
 import { Quote, ChevronLeft, ChevronRight, Star } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import { SectionWrapper } from '@/components/common/SectionWrapper'
@@ -73,7 +73,7 @@ export function Testimonials() {
             <Quote className="h-12 w-12 text-(--color-primary)/20" />
           </div>
 
-          <motion.div
+          <m.div
             key={current}
             custom={direction}
             variants={variants}
@@ -104,11 +104,12 @@ export function Testimonials() {
                 {testimonial.role}
               </div>
             </div>
-          </motion.div>
+          </m.div>
         </div>
 
         <div className="flex items-center justify-center gap-4 mt-8">
           <button
+            type="button"
             onClick={prev}
             aria-label="Previous testimonial"
             className="p-2 rounded-full bg-(--color-surface) border border-(--color-border)
@@ -121,6 +122,7 @@ export function Testimonials() {
           <div className="flex items-center gap-2">
             {testimonials.map((_, index) => (
               <button
+                type="button"
                 key={index}
                 onClick={() => goTo(index)}
                 aria-label={`Go to testimonial ${index + 1}`}
@@ -134,6 +136,7 @@ export function Testimonials() {
           </div>
 
           <button
+            type="button"
             onClick={next}
             aria-label="Next testimonial"
             className="p-2 rounded-full bg-(--color-surface) border border-(--color-border)

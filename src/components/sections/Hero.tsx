@@ -1,6 +1,6 @@
 import { useCallback, useRef } from 'react'
 import {
-  motion,
+  m,
   useScroll,
   useTransform,
 } from 'framer-motion'
@@ -31,11 +31,11 @@ export function Hero() {
       ref={sectionRef}
       className="relative min-h-screen flex items-center justify-center overflow-hidden px-5"
     >
-      <motion.div
+      <m.div
         style={{ y: bgY }}
         className="absolute inset-0"
       >
-        <motion.div
+        <m.div
           animate={{ scale: [1, 1.06, 1] }}
           transition={{ duration: 12, ease: 'easeInOut', repeat: Infinity }}
           className="absolute inset-0 bg-cover bg-center"
@@ -46,7 +46,7 @@ export function Hero() {
 
         <div className="absolute inset-0 bg-gradient-to-t from-(--color-bg) via-transparent to-(--color-bg)/30" />
 
-        <motion.div
+        <m.div
           animate={{
             scale: [1, 1.12, 1],
             rotate: [0, 5, 0],
@@ -55,7 +55,7 @@ export function Hero() {
           className="absolute -top-32 -right-32 w-96 h-96 rounded-full bg-(--color-primary)/10 blur-3xl"
         />
 
-        <motion.div
+        <m.div
           animate={{
             scale: [1, 1.15, 1],
             rotate: [0, -5, 0],
@@ -63,28 +63,28 @@ export function Hero() {
           transition={{ duration: 18, ease: 'easeInOut', repeat: Infinity }}
           className="absolute -bottom-40 -left-40 w-[30rem] h-[30rem] rounded-full bg-(--color-secondary)/10 blur-3xl"
         />
-      </motion.div>
+      </m.div>
 
-      <motion.div
+      <m.div
         style={{ y: contentY, opacity }}
         className="relative max-w-4xl mx-auto text-center"
       >
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: -20, scale: 0.95 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
           transition={{ duration: 0.6, ease: 'easeOut' }}
           className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-(--color-primary)/10 border border-(--color-primary)/20 text-sm font-medium text-(--color-primary) mb-8"
         >
-          <motion.span
+          <m.span
             animate={{ rotate: [0, 15, -15, 0] }}
             transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
           >
             <Sparkles className="h-4 w-4" />
-          </motion.span>
+          </m.span>
           {t('hero.badge')}
-        </motion.div>
+        </m.div>
 
-        <motion.h1
+        <m.h1
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.15, ease: [0.25, 0.46, 0.45, 0.94] }}
@@ -92,32 +92,32 @@ export function Hero() {
         >
           {t('hero.title')}
           <br />
-          <motion.span
+          <m.span
             className="text-(--color-primary) inline-block"
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.5 }}
           >
             {t('hero.titleHighlight')}
-          </motion.span>
-        </motion.h1>
+          </m.span>
+        </m.h1>
 
-        <motion.p
+        <m.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.35 }}
           className="text-lg md:text-xl text-(--color-text-muted) max-w-2xl mx-auto mb-10 leading-relaxed"
         >
           {t('hero.subtitle')}
-        </motion.p>
+        </m.p>
 
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.5 }}
           className="flex flex-col sm:flex-row items-center justify-center gap-4"
         >
-          <motion.div
+          <m.div
             animate={{
               boxShadow: [
                 '0 0 0 0 rgba(217, 119, 6, 0.4)',
@@ -134,15 +134,15 @@ export function Hero() {
               className="animate-hero-cta"
             >
               {t('hero.ctaQuote')}
-              <motion.span
+              <m.span
                 animate={{ x: [0, 5, 0] }}
                 transition={{ duration: 1.5, repeat: Infinity, ease: 'easeInOut' }}
                 className="inline-flex"
               >
                 <ArrowRight className="h-5 w-5" />
-              </motion.span>
+              </m.span>
             </Button>
-          </motion.div>
+          </m.div>
 
           <Button
             variant="outline"
@@ -151,9 +151,9 @@ export function Hero() {
           >
             {t('hero.ctaServices')}
           </Button>
-        </motion.div>
+        </m.div>
 
-        <motion.div
+        <m.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 0.7 }}
@@ -161,7 +161,7 @@ export function Hero() {
         >
           {(t('hero.tags', { returnObjects: true }) as string[]).map(
             (item: string, i: number) => (
-              <motion.div
+              <m.div
                 key={item}
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -175,11 +175,11 @@ export function Hero() {
                     {item}
                   </span>
                 </div>
-              </motion.div>
+              </m.div>
             )
           )}
-        </motion.div>
-      </motion.div>
+        </m.div>
+      </m.div>
     </section>
   )
 }

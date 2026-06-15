@@ -1,4 +1,4 @@
-import { motion, useReducedMotion } from 'framer-motion'
+import { m, useReducedMotion } from 'framer-motion'
 import {
   Heart,
   Building2,
@@ -49,7 +49,7 @@ export function Services() {
 
       <div className="relative">
         {!prefersReducedMotion && foodIcons.map((Icon, i) => (
-          <motion.div
+          <m.div
             key={i}
             className="absolute hidden lg:block pointer-events-none"
             style={{
@@ -70,14 +70,14 @@ export function Services() {
             }}
           >
             <Icon className="h-8 w-8 text-(--color-primary)" />
-          </motion.div>
+          </m.div>
         ))}
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {items.map((service, index) => {
             const Icon = icons[index]
             return (
-              <motion.div
+              <m.div
                 key={service.title}
                 initial={prefersReducedMotion ? undefined : { opacity: 0, y: 30 }}
                 whileInView={prefersReducedMotion ? undefined : { opacity: 1, y: 0 }}
@@ -101,7 +101,7 @@ export function Services() {
                 <p className="text-(--color-text-muted) leading-relaxed">
                   {service.description}
                 </p>
-              </motion.div>
+              </m.div>
             )
           })}
         </div>

@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react'
-import { motion, useReducedMotion } from 'framer-motion'
+import { m, useReducedMotion } from 'framer-motion'
 import { cn } from '@/utils/cn'
 
 interface SectionWrapperProps {
@@ -26,7 +26,7 @@ export function SectionWrapper({
         className
       )}
     >
-      <motion.div
+      <m.div
         initial={prefersReducedMotion ? undefined : { opacity: 0, y: 30 }}
         whileInView={prefersReducedMotion ? undefined : { opacity: 1, y: 0 }}
         viewport={{ once: true, margin: '-100px' }}
@@ -34,7 +34,7 @@ export function SectionWrapper({
         className="max-w-7xl mx-auto"
       >
         {children}
-      </motion.div>
+      </m.div>
     </section>
   )
 }

@@ -8,6 +8,7 @@ interface ThemeToggleProps {
 export function ThemeToggle({ dark, onToggle }: ThemeToggleProps) {
   return (
     <button
+      type="button"
       onClick={onToggle}
       aria-label={dark ? 'Activate light mode' : 'Activate dark mode'}
       className="relative p-2 rounded-full bg-(--color-bg-alt) border border-(--color-border) text-(--color-text-muted) hover:text-(--color-primary) transition-colors duration-300 cursor-pointer"
