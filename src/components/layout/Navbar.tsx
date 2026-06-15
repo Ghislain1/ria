@@ -30,11 +30,6 @@ export function Navbar({ dark, onToggleTheme }: NavbarProps) {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  useEffect(() => {
-    document.body.style.overflow = isOpen ? 'hidden' : ''
-    return () => { document.body.style.overflow = '' }
-  }, [isOpen])
-
   const handleClick = (href: string) => {
     setIsOpen(false)
     const el = document.querySelector(href)
@@ -179,7 +174,7 @@ export function Navbar({ dark, onToggleTheme }: NavbarProps) {
               setIsOpen((prev) => !prev)
             }}
             aria-label={isOpen ? 'Close menu' : 'Open menu'}
-            className="relative z-20 p-2 text-(--color-text) cursor-pointer"
+            className="relative z-[60] p-2 text-(--color-text) cursor-pointer"
           >
             {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
