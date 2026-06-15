@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
-import { m } from 'framer-motion'
+import { m, AnimatePresence } from 'framer-motion'
 import { Menu, X, ChefHat, ChevronDown } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import { ThemeToggle } from '../ui/ThemeToggle'
@@ -55,6 +55,32 @@ export function Navbar({ dark, onToggleTheme }: NavbarProps) {
   ]
 
   const currentSection = activeSection || PATH_SECTION_MAP[pathname] || 'hero'
+
+  const menuVariants = {
+    hidden: { scale: 0, borderRadius: '50%', opacity: 0 },
+    visible: {
+      scale: 1,
+      borderRadius: '0%',
+      opacity: 1,
+      transition: { type: 'spring' as const, damping: 24, stiffness: 220, mass: 0.8 },
+    },
+    exit: {
+      scale: 0,
+      borderRadius: '50%',
+      opacity: 0,
+      transition: { duration: 0.35, ease: [0.4, 0, 0.2, 1] as [number, number, number, number] },
+    },
+  }
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 24 },
+    visible: (i: number) => ({
+      opacity: 1,
+      y: 0,
+      transition: { delay: 0.08 + i * 0.05, duration: 0.4, ease: 'easeOut' as const },
+    }),
+    exit: { opacity: 0, y: -12, transition: { duration: 0.15 } },
+  }
 
   const changeLang = (code: string) => {
     i18n.changeLanguage(code)
@@ -191,15 +217,23 @@ export function Navbar({ dark, onToggleTheme }: NavbarProps) {
       </nav>
     </header>
 
+      <AnimatePresence>
       {isOpen && (
-        <div className="md:hidden fixed inset-0 z-50 overflow-y-auto bg-(--color-bg)">
+        <m.div
+          variants={menuVariants}
+          initial="hidden"
+          animate="visible"
+          exit="exit"
+          className="md:hidden fixed inset-0 z-50 overflow-y-auto bg-(--color-bg)"
+          style={{ transformOrigin: 'center center' }}
+        >
           <div className="px-5 py-8 flex flex-col gap-3">
-            {navLinks.map((link) => {
+            {navLinks.map((link, i) => {
               const section = link.path.replace('/', '') || 'hero'
               const isActive = currentSection === section
               return (
+                <m.div key={link.path} variants={itemVariants} custom={i} initial="hidden" animate="visible" exit="exit">
                 <button
-                  key={link.path}
                   type="button"
                   onClick={() => handleNav(link.path)}
                   className={cn(
@@ -211,11 +245,13 @@ export function Navbar({ dark, onToggleTheme }: NavbarProps) {
                 >
                   {link.label}
                 </button>
+                </m.div>
               )
             })}
           </div>
-        </div>
+        </m.div>
       )}
+      </AnimatePresence>
     </>
   )
 }
