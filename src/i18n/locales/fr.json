@@ -141,6 +141,84 @@
     "email": "Envoyer un e-mail",
     "whatsApp": "WhatsApp"
   },
+  "impressum": {
+    "title": "Mentions légales",
+    "close": "Fermer",
+    "section1": {
+      "heading": "Informations conformément au § 5 TMG",
+      "body": "Ria's Cuisine\nPropriétaire : Ria Musterfrau\nStreitzeuggasse 1\n50667 Cologne\nAllemagne"
+    },
+    "section2": {
+      "heading": "Contact",
+      "body": "Téléphone : 0049 176 62028482\nE-mail : info@riascuisine.com"
+    },
+    "section3": {
+      "heading": "Numéro de TVA",
+      "body": "Numéro d'identification de taxe sur le chiffre d'affaires conformément au § 27 a de la loi allemande sur la TVA :\nDE123456789"
+    },
+    "section4": {
+      "heading": "Responsable du contenu selon § 55 Abs. 2 RStV",
+      "body": "Ria Musterfrau\nStreitzeuggasse 1\n50667 Cologne\nAllemagne"
+    },
+    "section5": {
+      "heading": "Avertissement",
+      "body": "Le contenu de ce site web a été compilé avec le plus grand soin. Cependant, nous ne pouvons pas assumer de responsabilité quant à l'exactitude, l'exhaustivité et l'actualité du contenu.\n\nEn tant que fournisseur de services, nous sommes responsables de notre propre contenu sur ces pages conformément au § 7 para.1 TMG en vertu des lois générales. Selon les §§ 8 à 10 TMG, nous ne sommes pas obligés en tant que fournisseur de services de surveiller les informations tierces transmises ou stockées ou de rechercher des circonstances indiquant une activité illégale."
+    },
+    "section6": {
+      "heading": "Confidentialité",
+      "body": "L'utilisation de notre site web est généralement possible sans fournir de données personnelles. Lorsque des données personnelles (telles que le nom, l'adresse ou les adresses e-mail) sont collectées sur nos pages, cela se fait toujours sur une base volontaire. Ces données ne seront pas transmises à des tiers sans votre consentement explicite."
+    }
+  },
+  "datenschutz": {
+    "title": "Politique de confidentialité",
+    "close": "Fermer",
+    "overview": {
+      "heading": "Aperçu de la protection des données",
+      "body": "Nous prenons très au sérieux la protection de vos données personnelles. Cette politique de confidentialité vous informe sur la façon dont nous traitons vos données sur notre site web.\n\nL'utilisation de notre site web est généralement possible sans fournir de données personnelles. Si vous envoyez des demandes via notre formulaire de contact, nous collectons des données personnelles uniquement dans le but de traiter votre demande."
+    },
+    "dataCollected": {
+      "heading": "Quelles données sont collectées",
+      "body": "Lors de la prise de contact via notre formulaire, nous collectons : nom, adresse e-mail, numéro de téléphone, type d'événement, date de l'événement, nombre d'invités, lieu de l'événement, budget et votre message.\n\nLors de la visite du site web, des données techniques telles que l'adresse IP, le type de navigateur et l'heure d'accès sont automatiquement collectées. Ces données ne sont pas personnelles et sont utilisées exclusivement à des fins d'analyse statistique et de sécurité."
+    },
+    "purpose": {
+      "heading": "Finalité du traitement des données",
+      "body": "Vos données sont utilisées exclusivement pour traiter votre demande de traiteur, communiquer avec vous et créer des offres individuelles.\n\nLes données ne sont pas transmises à des tiers, sauf si vous avez expressément consenti ou si nous y sommes légalement obligés."
+    },
+    "cookies": {
+      "heading": "Cookies",
+      "body": "Notre site web n'utilise pas de cookies de suivi ni de cookies tiers. Seuls des cookies de session techniquement nécessaires sont utilisés, requis pour le fonctionnement du site web.\n\nCes cookies sont automatiquement supprimés après la fin de votre session de navigation."
+    },
+    "rights": {
+      "heading": "Vos droits",
+      "body": "Vous avez le droit d'obtenir à tout moment des informations sur les données personnelles que nous stockons. Vous avez également le droit de rectification, de suppression ou de limitation du traitement de vos données.\n\nSi vous avez des questions concernant la protection des données, veuillez nous contacter par e-mail."
+    },
+    "contact": {
+      "heading": "Contact protection des données",
+      "body": "Ria's Cuisine\nStreitzeuggasse 1\n50667 Cologne\nAllemagne\nE-mail : info@riascuisine.com\nTéléphone : 0049 176 62028482"
+    }
+  },
+  "cookie": {
+    "title": "Paramètres des cookies",
+    "close": "Fermer",
+    "acceptAll": "Tout accepter",
+    "save": "Enregistrer",
+    "essential": {
+      "heading": "Cookies essentiels",
+      "body": "Ces cookies sont strictement nécessaires au fonctionnement du site web et ne peuvent pas être désactivés. Ils permettent des fonctions de base telles que la navigation et l'accès aux zones sécurisées."
+    },
+    "analytics": {
+      "heading": "Cookies analytiques",
+      "body": "Ces cookies nous aident à comprendre comment les visiteurs interagissent avec notre site web en collectant et en rapportant des informations anonymes."
+    },
+    "preferences": {
+      "heading": "Cookies de préférence",
+      "body": "Ces cookies permettent au site web de mémoriser vos préférences afin de vous offrir une expérience personnalisée."
+    },
+    "manage": {
+      "heading": "Gestion des cookies",
+      "body": "Vous pouvez ajuster vos paramètres de cookies à tout moment. Les cookies essentiels sont toujours actifs. Les cookies analytiques et de préférence peuvent être activés ou désactivés selon vos souhaits."
+    }
+  },
   "language": {
     "de": "Deutsch",
     "en": "English",

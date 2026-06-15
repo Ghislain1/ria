@@ -1,8 +1,15 @@
+import { useState } from 'react'
 import { ChefHat, Mail, Phone, MapPin } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
+import { ImpressumModal } from '@/components/ui/ImpressumModal'
+import { DatenschutzModal } from '@/components/ui/DatenschutzModal'
+import { CookieSettingsModal } from '@/components/ui/CookieSettingsModal'
 
 export function Footer() {
   const { t } = useTranslation()
+  const [impressumOpen, setImpressumOpen] = useState(false)
+  const [datenschutzOpen, setDatenschutzOpen] = useState(false)
+  const [cookieOpen, setCookieOpen] = useState(false)
   const year = new Date().getFullYear()
 
   const links = [
@@ -67,10 +74,39 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="pt-8 border-t border-(--color-border) text-center text-sm text-(--color-text-muted)">
-          &copy; {year} Ria's Cuisine. {t('footer.rights')}
+        <div className="pt-8 border-t border-(--color-border) text-center text-sm text-(--color-text-muted) space-y-2">
+          <p>&copy; {year} Ria's Cuisine. {t('footer.rights')}</p>
+          <div className="flex items-center justify-center gap-3 pt-2">
+            <button
+              type="button"
+              onClick={() => setImpressumOpen(true)}
+              className="text-(--color-text-muted) hover:text-(--color-primary) underline underline-offset-2 transition-colors cursor-pointer text-xs"
+            >
+              {t('impressum.title')}
+            </button>
+            <span className="text-(--color-border)">|</span>
+            <button
+              type="button"
+              onClick={() => setDatenschutzOpen(true)}
+              className="text-(--color-text-muted) hover:text-(--color-primary) underline underline-offset-2 transition-colors cursor-pointer text-xs"
+            >
+              {t('datenschutz.title')}
+            </button>
+            <span className="text-(--color-border)">|</span>
+            <button
+              type="button"
+              onClick={() => setCookieOpen(true)}
+              className="text-(--color-text-muted) hover:text-(--color-primary) underline underline-offset-2 transition-colors cursor-pointer text-xs"
+            >
+              {t('cookie.title')}
+            </button>
+          </div>
         </div>
       </div>
+
+      <ImpressumModal isOpen={impressumOpen} onClose={() => setImpressumOpen(false)} />
+      <DatenschutzModal isOpen={datenschutzOpen} onClose={() => setDatenschutzOpen(false)} />
+      <CookieSettingsModal isOpen={cookieOpen} onClose={() => setCookieOpen(false)} />
     </footer>
   )
 }

@@ -141,6 +141,84 @@
     "email": "E-Mail senden",
     "whatsApp": "WhatsApp"
   },
+  "impressum": {
+    "title": "Impressum",
+    "close": "Schließen",
+    "section1": {
+      "heading": "Angaben gemäß § 5 TMG",
+      "body": "Ria's Cuisine\nInhaber: Ria Musterfrau\nStreitzeuggasse 1\n50667 Köln"
+    },
+    "section2": {
+      "heading": "Kontakt",
+      "body": "Telefon: 0049 176 62028482\nE-Mail: info@riascuisine.com"
+    },
+    "section3": {
+      "heading": "Umsatzsteuer-ID",
+      "body": "Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz:\nDE123456789"
+    },
+    "section4": {
+      "heading": "Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV",
+      "body": "Ria Musterfrau\nStreitzeuggasse 1\n50667 Köln"
+    },
+    "section5": {
+      "heading": "Haftungsausschluss",
+      "body": "Die Inhalte dieser Website wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte können wir jedoch keine Gewähr übernehmen.\n\nAls Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen."
+    },
+    "section6": {
+      "heading": "Datenschutz",
+      "body": "Die Nutzung unserer Website ist in der Regel ohne Angabe personenbezogener Daten möglich. Soweit auf unseren Seiten personenbezogene Daten (beispielsweise Name, Anschrift oder E-Mail-Adressen) erhoben werden, erfolgt dies stets auf freiwilliger Basis. Diese Daten werden ohne Ihre ausdrückliche Zustimmung nicht an Dritte weitergegeben."
+    }
+  },
+  "datenschutz": {
+    "title": "Datenschutzerklärung",
+    "close": "Schließen",
+    "overview": {
+      "heading": "Datenschutz auf einen Blick",
+      "body": "Wir nehmen den Schutz Ihrer personenbezogenen Daten sehr ernst. Diese Datenschutzerklärung informiert Sie über die Verarbeitung Ihrer Daten auf unserer Website.\n\nEine Nutzung unserer Website ist grundsätzlich ohne Angabe personenbezogener Daten möglich. Sofern Sie über unser Kontaktformular Anfragen senden, erheben wir personenbezogene Daten ausschließlich zum Zweck der Bearbeitung Ihrer Anfrage."
+    },
+    "dataCollected": {
+      "heading": "Welche Daten erhoben werden",
+      "body": "Bei der Kontaktaufnahme über unser Formular erheben wir: Name, E-Mail-Adresse, Telefonnummer, Veranstaltungstyp, Veranstaltungsdatum, Anzahl der Gäste, Veranstaltungsort, Budgetrahmen und Ihre Nachricht.\n\nBeim Besuch der Website werden automatisch technische Daten wie IP-Adresse, Browsertyp und Zugriffszeitpunkt erhoben. Diese Daten sind nicht personenbezogen und dienen ausschließlich der statistischen Auswertung und Sicherheit."
+    },
+    "purpose": {
+      "heading": "Zweck der Datenverarbeitung",
+      "body": "Ihre Daten werden ausschließlich zur Bearbeitung Ihrer Catering-Anfrage, zur Kommunikation mit Ihnen und zur Erstellung individueller Angebote verwendet.\n\nEine Weitergabe an Dritte erfolgt nicht, es sei denn, Sie haben ausdrücklich eingewilligt oder wir sind rechtlich dazu verpflichtet."
+    },
+    "cookies": {
+      "heading": "Cookies",
+      "body": "Unsere Website verwendet keine Tracking-Cookies oder Drittanbieter-Cookies. Es werden ausschließlich technisch notwendige Session-Cookies eingesetzt, die für den Betrieb der Website erforderlich sind.\n\nDiese Cookies werden nach Ende Ihrer Browsersitzung automatisch gelöscht."
+    },
+    "rights": {
+      "heading": "Ihre Rechte",
+      "body": "Sie haben jederzeit das Recht auf Auskunft über die bei uns gespeicherten personenbezogenen Daten. Darüber hinaus haben Sie das Recht auf Berichtigung, Löschung oder Einschränkung der Verarbeitung Ihrer Daten.\n\nWenn Sie Fragen zum Datenschutz haben, kontaktieren Sie uns bitte per E-Mail."
+    },
+    "contact": {
+      "heading": "Kontakt Datenschutz",
+      "body": "Ria's Cuisine\nStreitzeuggasse 1\n50667 Köln\nE-Mail: info@riascuisine.com\nTelefon: 0049 176 62028482"
+    }
+  },
+  "cookie": {
+    "title": "Cookie-Einstellungen",
+    "close": "Schließen",
+    "acceptAll": "Alle akzeptieren",
+    "save": "Einstellungen speichern",
+    "essential": {
+      "heading": "Notwendige Cookies",
+      "body": "Diese Cookies sind für den Betrieb der Website unbedingt erforderlich und können nicht deaktiviert werden. Sie ermöglichen Kernfunktionen wie Navigation und Zugriff auf sichere Bereiche."
+    },
+    "analytics": {
+      "heading": "Analyse-Cookies",
+      "body": "Diese Cookies helfen uns zu verstehen, wie Besucher mit unserer Website interagieren, indem sie anonyme Informationen sammeln und melden."
+    },
+    "preferences": {
+      "heading": "Präferenz-Cookies",
+      "body": "Diese Cookies ermöglichen es der Website, sich an Ihre Präferenzen zu erinnern, um ein personalisiertes Erlebnis zu bieten."
+    },
+    "manage": {
+      "heading": "Cookie-Verwaltung",
+      "body": "Sie können Ihre Cookie-Einstellungen jederzeit anpassen. Notwendige Cookies sind immer aktiv. Analyse- und Präferenz-Cookies können Sie nach Belieben ein- oder ausschalten."
+    }
+  },
   "language": {
     "de": "Deutsch",
     "en": "English",

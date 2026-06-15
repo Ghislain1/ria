@@ -141,6 +141,84 @@
     "email": "Send Email",
     "whatsApp": "WhatsApp"
   },
+  "impressum": {
+    "title": "Imprint",
+    "close": "Close",
+    "section1": {
+      "heading": "Information pursuant to § 5 TMG",
+      "body": "Ria's Cuisine\nOwner: Ria Musterfrau\nStreitzeuggasse 1\n50667 Cologne\nGermany"
+    },
+    "section2": {
+      "heading": "Contact",
+      "body": "Phone: 0049 176 62028482\nEmail: info@riascuisine.com"
+    },
+    "section3": {
+      "heading": "VAT ID",
+      "body": "Sales tax identification number according to § 27 a of the German VAT law:\nDE123456789"
+    },
+    "section4": {
+      "heading": "Responsible for content according to § 55 Abs. 2 RStV",
+      "body": "Ria Musterfrau\nStreitzeuggasse 1\n50667 Cologne\nGermany"
+    },
+    "section5": {
+      "heading": "Disclaimer",
+      "body": "The contents of this website have been compiled with the utmost care. However, we cannot assume any liability for the correctness, completeness, and up-to-dateness of the contents.\n\nAs a service provider, we are responsible for our own content on these pages in accordance with § 7 para.1 TMG under general laws. According to §§ 8 to 10 TMG, we are not obligated as a service provider to monitor transmitted or stored third-party information or to investigate circumstances indicating illegal activity."
+    },
+    "section6": {
+      "heading": "Privacy",
+      "body": "The use of our website is generally possible without providing personal data. Where personal data (such as name, address, or email addresses) is collected on our pages, this is always done on a voluntary basis. This data will not be passed on to third parties without your express consent."
+    }
+  },
+  "datenschutz": {
+    "title": "Privacy Policy",
+    "close": "Close",
+    "overview": {
+      "heading": "Privacy at a Glance",
+      "body": "We take the protection of your personal data very seriously. This privacy policy informs you about how we process your data on our website.\n\nUsing our website is generally possible without providing personal data. If you send inquiries via our contact form, we collect personal data solely for the purpose of processing your request."
+    },
+    "dataCollected": {
+      "heading": "What Data We Collect",
+      "body": "When contacting us via our form, we collect: name, email address, phone number, event type, event date, number of guests, venue location, budget range, and your message.\n\nWhen visiting the website, technical data such as IP address, browser type, and access time are automatically collected. This data is not personal and is used exclusively for statistical analysis and security."
+    },
+    "purpose": {
+      "heading": "Purpose of Data Processing",
+      "body": "Your data is used exclusively to process your catering inquiry, to communicate with you, and to create individual offers.\n\nData is not passed on to third parties unless you have expressly consented or we are legally obligated to do so."
+    },
+    "cookies": {
+      "heading": "Cookies",
+      "body": "Our website does not use tracking cookies or third-party cookies. Only technically necessary session cookies are used, which are required for the operation of the website.\n\nThese cookies are automatically deleted after your browser session ends."
+    },
+    "rights": {
+      "heading": "Your Rights",
+      "body": "You have the right to information about the personal data stored by us at any time. You also have the right to correction, deletion, or restriction of the processing of your data.\n\nIf you have any questions about data protection, please contact us by email."
+    },
+    "contact": {
+      "heading": "Data Protection Contact",
+      "body": "Ria's Cuisine\nStreitzeuggasse 1\n50667 Cologne\nGermany\nEmail: info@riascuisine.com\nPhone: 0049 176 62028482"
+    }
+  },
+  "cookie": {
+    "title": "Cookie Settings",
+    "close": "Close",
+    "acceptAll": "Accept All",
+    "save": "Save Settings",
+    "essential": {
+      "heading": "Essential Cookies",
+      "body": "These cookies are strictly necessary for the operation of the website and cannot be disabled. They enable core functions such as navigation and access to secure areas."
+    },
+    "analytics": {
+      "heading": "Analytics Cookies",
+      "body": "These cookies help us understand how visitors interact with our website by collecting and reporting anonymous information."
+    },
+    "preferences": {
+      "heading": "Preference Cookies",
+      "body": "These cookies allow the website to remember your preferences to provide a personalized experience."
+    },
+    "manage": {
+      "heading": "Cookie Management",
+      "body": "You can adjust your cookie settings at any time. Essential cookies are always active. Analytics and preference cookies can be toggled as you wish."
+    }
+  },
   "language": {
     "de": "Deutsch",
     "en": "English",
