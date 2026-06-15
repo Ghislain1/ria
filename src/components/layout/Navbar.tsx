@@ -69,6 +69,7 @@ export function Navbar({ dark, onToggleTheme }: NavbarProps) {
     >
       <nav className="max-w-7xl mx-auto px-5 py-4 flex items-center justify-between">
         <a
+          onKeyDown={() => void 0}
           href="#hero"
           onClick={(e) => { e.preventDefault(); handleClick('#hero') }}
           className="flex items-center gap-2 text-xl font-bold text-(--color-text) hover:text-(--color-primary) transition-colors"

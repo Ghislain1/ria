@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react'
+import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
@@ -12,12 +12,12 @@ import { Button } from '@/components/ui/Button'
 import { submitContactForm } from '@/services/contactService'
 
 export function Contact() {
-  const { t, i18n } = useTranslation()
+  const { t } = useTranslation()
 
   const eventTypes = t('contact.eventTypes.items', { returnObjects: true }) as string[]
   const budgetRanges = t('contact.budgetRanges.items', { returnObjects: true }) as string[]
 
-  const contactSchema = useMemo(() => z.object({
+  const contactSchema = z.object({
     name: z.string().min(2, t('contact.errors.nameMin')),
     email: z.string().email(t('contact.errors.email')),
     phone: z.string().min(7, t('contact.errors.phone')),
@@ -27,8 +27,7 @@ export function Contact() {
     venueLocation: z.string().min(2, t('contact.errors.venueLocation')),
     budget: z.string().min(1, t('contact.errors.budget')),
     message: z.string().optional(),
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }), [i18n.language])
+  })
 
   type ContactForm = z.infer<typeof contactSchema>
 
