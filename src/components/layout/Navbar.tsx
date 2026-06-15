@@ -186,7 +186,7 @@ export function Navbar({ dark, onToggleTheme }: NavbarProps) {
           style={{ backgroundColor: 'var(--color-bg)' }}>
           <div className="px-5 py-8 flex flex-col gap-3">
             {navLinks.map((link) => {
-              const section = link.href.replace('#', '')
+              const section = link.href.replace('#', '/')
               const isActive = activeSection === section
               return (
                 <a
