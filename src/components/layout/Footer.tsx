@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { ChefHat, Mail, Phone, MapPin } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import { ImpressumModal } from '@/components/ui/ImpressumModal'
@@ -11,6 +11,21 @@ export function Footer() {
   const [datenschutzOpen, setDatenschutzOpen] = useState(false)
   const [cookieOpen, setCookieOpen] = useState(false)
   const year = new Date().getFullYear()
+
+  const COOKIE_KEY = 'ria-cookie-consent'
+
+  useEffect(() => {
+    if (!localStorage.getItem(COOKIE_KEY)) {
+      setCookieOpen(true)
+    }
+  }, [])
+
+  const saveConsent = (data: { analytics: boolean; preferences: boolean }) => {
+    localStorage.setItem(
+      COOKIE_KEY,
+      JSON.stringify({ ...data, essential: true, timestamp: new Date().toISOString() })
+    )
+  }
 
   const links = [
     { label: t('nav.services'), href: '#services' },
@@ -106,7 +121,12 @@ export function Footer() {
 
       <ImpressumModal isOpen={impressumOpen} onClose={() => setImpressumOpen(false)} />
       <DatenschutzModal isOpen={datenschutzOpen} onClose={() => setDatenschutzOpen(false)} />
-      <CookieSettingsModal isOpen={cookieOpen} onClose={() => setCookieOpen(false)} />
+      <CookieSettingsModal
+        isOpen={cookieOpen}
+        onClose={() => setCookieOpen(false)}
+        onAccept={() => saveConsent({ analytics: true, preferences: true })}
+        onSave={(s) => saveConsent(s)}
+      />
     </footer>
   )
 }

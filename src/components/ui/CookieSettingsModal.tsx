@@ -1,11 +1,18 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { m, AnimatePresence } from 'framer-motion'
 import { X, Cookie } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 
+interface CookieSettings {
+  analytics: boolean
+  preferences: boolean
+}
+
 interface CookieSettingsModalProps {
   isOpen: boolean
   onClose: () => void
+  onAccept: () => void
+  onSave: (settings: CookieSettings) => void
 }
 
 const backdropVariants = {
@@ -65,8 +72,17 @@ const contentVariants = {
 
 const sections = ['essential', 'analytics', 'preferences', 'manage'] as const
 
-export function CookieSettingsModal({ isOpen, onClose }: CookieSettingsModalProps) {
+export function CookieSettingsModal({ isOpen, onClose, onAccept, onSave }: CookieSettingsModalProps) {
   const { t } = useTranslation()
+  const [analytics, setAnalytics] = useState(false)
+  const [preferences, setPreferences] = useState(true)
+
+  useEffect(() => {
+    if (isOpen) {
+      setAnalytics(false)
+      setPreferences(true)
+    }
+  }, [isOpen])
 
   useEffect(() => {
     const handleKey = (e: KeyboardEvent) => {
@@ -163,7 +179,12 @@ export function CookieSettingsModal({ isOpen, onClose }: CookieSettingsModalProp
                         <label className="relative inline-flex items-center cursor-pointer shrink-0 mt-1">
                           <input
                             type="checkbox"
-                            defaultChecked={key === 'preferences'}
+                            checked={key === 'analytics' ? analytics : preferences}
+                            onChange={() =>
+                              key === 'analytics'
+                                ? setAnalytics((v) => !v)
+                                : setPreferences((v) => !v)
+                            }
                             className="sr-only peer"
                           />
                           <div className="w-9 h-5 rounded-full bg-(--color-border) peer-checked:bg-(--color-primary) transition-colors after:content-[''] after:absolute after:top-0.5 after:left-0.5 after:w-4 after:h-4 after:rounded-full after:bg-white after:transition-all peer-checked:after:translate-x-4" />
@@ -182,14 +203,14 @@ export function CookieSettingsModal({ isOpen, onClose }: CookieSettingsModalProp
                 >
                   <button
                     type="button"
-                    onClick={onClose}
+                    onClick={() => { onAccept(); onClose() }}
                     className="flex-1 px-4 py-2.5 rounded-xl font-medium text-sm bg-(--color-primary) text-white hover:brightness-110 transition-all cursor-pointer"
                   >
                     {t('cookie.acceptAll')}
                   </button>
                   <button
                     type="button"
-                    onClick={onClose}
+                    onClick={() => { onSave({ analytics, preferences }); onClose() }}
                     className="flex-1 px-4 py-2.5 rounded-xl font-medium text-sm border border-(--color-border) text-(--color-text-muted) hover:bg-(--color-bg-alt) transition-all cursor-pointer"
                   >
                     {t('cookie.save')}
