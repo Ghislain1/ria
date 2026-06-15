@@ -115,7 +115,7 @@ export function Navbar({ dark, onToggleTheme }: NavbarProps) {
             </button>
             {langOpen && (
               <>
-                <div className="fixed inset-0 z-10" onClick={() => setLangOpen(false)} />
+                <div className="fixed inset-0 z-10" role='button' onKeyUp={() => void 0} onClick={() => setLangOpen(false)} />
                 <div className="absolute right-0 mt-1.5 z-20 bg-(--color-surface) border border-(--color-border) rounded-xl shadow-lg overflow-hidden min-w-30">
                   {langs.map((l) => (
                     <button
@@ -151,7 +151,7 @@ export function Navbar({ dark, onToggleTheme }: NavbarProps) {
             </button>
             {langOpen && (
               <>
-                <div className="fixed inset-0 z-10" onClick={() => setLangOpen(false)} />
+                <div className="fixed inset-0 z-10" role='button' onKeyUp={() => void 0} onClick={() => setLangOpen(false)} />
                 <div className="absolute right-0 mt-1.5 z-20 bg-(--color-surface) border border-(--color-border) rounded-xl shadow-lg overflow-hidden min-w-30">
                   {langs.map((l) => (
                     <button
