@@ -26,7 +26,7 @@ export function Navbar({ dark, onToggleTheme }: NavbarProps) {
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20)
-    // window.addEventListener('scroll', handleScroll, { passive: true })
+    window.addEventListener('scroll', handleScroll, { passive: true })
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 

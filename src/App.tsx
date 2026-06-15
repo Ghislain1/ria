@@ -7,20 +7,20 @@ import { useTranslation } from 'react-i18next'
 
 export function App() {
   const { i18n } = useTranslation()
-
   useEffect(() => {
     const handleAnchor = () => {
       const hash = window.location.hash
       if (hash) {
         setTimeout(() => {
           document.querySelector(hash)?.scrollIntoView({ behavior: 'smooth' })
-        }, 100)
+        }, 1000)
       }
     }
     handleAnchor()
     window.addEventListener('hashchange', handleAnchor)
     return () => window.removeEventListener('hashchange', handleAnchor)
   }, [])
+
 
   return (
     <>
