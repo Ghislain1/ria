@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import { ChefHat, Mail, Phone, MapPin } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import { ImpressumModal } from '@/components/ui/ImpressumModal'
@@ -28,10 +29,10 @@ export function Footer() {
   }
 
   const links = [
-    { label: t('nav.services'), href: '#services' },
-    { label: t('nav.about'), href: '#about' },
-    { label: t('nav.testimonials'), href: '#testimonials' },
-    { label: t('nav.contact'), href: '#contact' },
+    { label: t('nav.services'), path: '/services' },
+    { label: t('nav.about'), path: '/about' },
+    { label: t('nav.testimonials'), path: '/testimonials' },
+    { label: t('nav.contact'), path: '/contact' },
   ]
 
   return (
@@ -56,13 +57,13 @@ export function Footer() {
             </h3>
             <ul className="space-y-3">
               {links.map((link) => (
-                <li key={link.href}>
-                  <a
-                    href={link.href}
+                <li key={link.path}>
+                  <Link
+                    to={link.path}
                     className="text-(--color-text-muted) hover:text-(--color-primary) transition-colors"
                   >
                     {link.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>

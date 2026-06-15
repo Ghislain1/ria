@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { useNavigate, useLocation } from 'react-router-dom'
 import { m } from 'framer-motion'
 import { Menu, X, ChefHat, ChevronDown } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
@@ -17,8 +18,18 @@ const langs = [
   { code: 'fr', label: 'FR' },
 ]
 
+const PATH_SECTION_MAP: Record<string, string> = {
+  '/': 'hero',
+  '/services': 'services',
+  '/about': 'about',
+  '/testimonials': 'testimonials',
+  '/contact': 'contact',
+}
+
 export function Navbar({ dark, onToggleTheme }: NavbarProps) {
   const { t, i18n } = useTranslation()
+  const navigate = useNavigate()
+  const { pathname } = useLocation()
   const [scrolled, setScrolled] = useState(false)
   const [isOpen, setIsOpen] = useState(false)
   const [langOpen, setLangOpen] = useState(false)
@@ -30,23 +41,20 @@ export function Navbar({ dark, onToggleTheme }: NavbarProps) {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  const handleClick = (href: string) => {
+  const handleNav = (path: string) => {
     setIsOpen(false)
-    const el = document.querySelector(href)
-    if (el) {
-      const offset = 80
-      const top = el.getBoundingClientRect().top + window.scrollY - offset
-      window.scrollTo({ top, behavior: 'smooth' })
-    }
+    navigate(path)
   }
 
   const navLinks = [
-    { label: t('nav.home'), href: '#hero' },
-    { label: t('nav.services'), href: '#services' },
-    { label: t('nav.about'), href: '#about' },
-    { label: t('nav.testimonials'), href: '#testimonials' },
-    { label: t('nav.contact'), href: '#contact' },
+    { label: t('nav.home'), path: '/' },
+    { label: t('nav.services'), path: '/services' },
+    { label: t('nav.about'), path: '/about' },
+    { label: t('nav.testimonials'), path: '/testimonials' },
+    { label: t('nav.contact'), path: '/contact' },
   ]
+
+  const currentSection = activeSection || PATH_SECTION_MAP[pathname] || 'hero'
 
   const changeLang = (code: string) => {
     i18n.changeLanguage(code)
@@ -54,6 +62,7 @@ export function Navbar({ dark, onToggleTheme }: NavbarProps) {
   }
 
   return (
+    <>
     <header
       className={cn(
         'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
@@ -65,8 +74,7 @@ export function Navbar({ dark, onToggleTheme }: NavbarProps) {
       <nav className="max-w-7xl mx-auto px-5 py-4 flex items-center justify-between">
         <button
           type="button"
-          onKeyDown={() => void 0}
-          onClick={(e) => { e.preventDefault(); handleClick('#hero') }}
+          onClick={() => handleNav('/')}
           className="flex items-center gap-2 text-xl font-bold text-(--color-text) hover:text-(--color-primary) transition-colors"
         >
           <ChefHat className="h-7 w-7 text-(--color-primary)" />
@@ -75,13 +83,13 @@ export function Navbar({ dark, onToggleTheme }: NavbarProps) {
 
         <div className="hidden md:flex items-center gap-6">
           {navLinks.map((link) => {
-            const section = link.href.replace('#', '')
-            const isActive = activeSection === section
+            const section = link.path.replace('/', '') || 'hero'
+            const isActive = currentSection === section
             return (
-              <a
-                key={link.href}
-                href={link.href}
-                onClick={(e) => { e.preventDefault(); handleClick(link.href) }}
+              <button
+                key={link.path}
+                type="button"
+                onClick={() => handleNav(link.path)}
                 className={cn(
                   'relative text-sm font-medium transition-colors', isActive
                   ? 'text-(--color-primary)'
@@ -95,7 +103,7 @@ export function Navbar({ dark, onToggleTheme }: NavbarProps) {
                     className="absolute -bottom-1.5 left-0 right-0 h-0.5 rounded-full bg-(--color-primary)"
                   />
                 )}
-              </a>
+              </button>
             )
           })}
 
@@ -181,34 +189,34 @@ export function Navbar({ dark, onToggleTheme }: NavbarProps) {
         </div>
 
       </nav>
+    </header>
 
       {isOpen && (
-        <div className="md:hidden fixed inset-x-0 top-[73px] bottom-0 z-40 overflow-y-auto shadow-2xl"
-          style={{ backgroundColor: 'var(--color-bg)' }}>
+        <div className="md:hidden fixed inset-0 z-50 overflow-y-auto bg-(--color-bg)">
           <div className="px-5 py-8 flex flex-col gap-3">
             {navLinks.map((link) => {
-              const section = link.href.replace('#', '/')
-              const isActive = activeSection === section
+              const section = link.path.replace('/', '') || 'hero'
+              const isActive = currentSection === section
               return (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  onClick={(e) => { e.preventDefault(); handleClick(link.href) }}
+                <button
+                  key={link.path}
+                  type="button"
+                  onClick={() => handleNav(link.path)}
                   className={cn(
-                    'block px-4 py-3 rounded-xl text-lg font-medium transition-colors',
+                    'block w-full text-left px-4 py-3 rounded-xl text-lg font-medium transition-colors',
                     isActive
                       ? 'text-(--color-primary) bg-(--color-primary)/5'
                       : 'text-(--color-text-muted) hover:text-(--color-primary) hover:bg-(--color-bg-alt)'
                   )}
                 >
                   {link.label}
-                </a>
+                </button>
               )
             })}
           </div>
         </div>
       )}
-    </header>
+    </>
   )
 }
 
