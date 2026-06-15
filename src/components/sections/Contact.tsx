@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { motion } from 'framer-motion'
+import { motion, useReducedMotion } from 'framer-motion'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from 'zod'
@@ -13,6 +13,7 @@ import { submitContactForm } from '@/services/contactService'
 
 export function Contact() {
   const { t } = useTranslation()
+  const prefersReducedMotion = useReducedMotion()
 
   const eventTypes = t('contact.eventTypes.items', { returnObjects: true }) as string[]
   const budgetRanges = t('contact.budgetRanges.items', { returnObjects: true }) as string[]
@@ -72,8 +73,8 @@ export function Contact() {
       />
 
       <motion.form
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
+        initial={prefersReducedMotion ? undefined : { opacity: 0, y: 20 }}
+        whileInView={prefersReducedMotion ? undefined : { opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
         onSubmit={handleSubmit(onSubmit)}

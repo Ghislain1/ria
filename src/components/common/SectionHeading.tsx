@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion'
+import { motion, useReducedMotion } from 'framer-motion'
 import { cn } from '@/utils/cn'
 
 interface SectionHeadingProps {
@@ -14,10 +14,12 @@ export function SectionHeading({
   className,
   centered = true,
 }: SectionHeadingProps) {
+  const prefersReducedMotion = useReducedMotion()
+
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
+      initial={prefersReducedMotion ? undefined : { opacity: 0, y: 20 }}
+      whileInView={prefersReducedMotion ? undefined : { opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5 }}
       className={cn(

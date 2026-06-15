@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion'
+import { motion, useReducedMotion } from 'framer-motion'
 import {
   Heart,
   Building2,
@@ -37,6 +37,7 @@ interface ServiceItem {
 
 export function Services() {
   const { t } = useTranslation()
+  const prefersReducedMotion = useReducedMotion()
   const items = t('services.items', { returnObjects: true }) as ServiceItem[]
 
   return (
@@ -47,7 +48,7 @@ export function Services() {
       />
 
       <div className="relative">
-        {foodIcons.map((Icon, i) => (
+        {!prefersReducedMotion && foodIcons.map((Icon, i) => (
           <motion.div
             key={i}
             className="absolute hidden lg:block pointer-events-none"
@@ -78,8 +79,8 @@ export function Services() {
             return (
               <motion.div
                 key={service.title}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial={prefersReducedMotion ? undefined : { opacity: 0, y: 30 }}
+                whileInView={prefersReducedMotion ? undefined : { opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.08 }}
                 className="group relative p-8 rounded-2xl bg-(--color-surface) border border-(--color-border) 

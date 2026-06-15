@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion'
+import { motion, useReducedMotion } from 'framer-motion'
 import { ChefHat, Award, Heart } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import { SectionWrapper } from '@/components/common/SectionWrapper'
@@ -17,6 +17,7 @@ const particles = Array.from({ length: 108 }, (_, i) => ({
 
 export function About() {
   const { t } = useTranslation()
+  const prefersReducedMotion = useReducedMotion()
 
   const stats = [
     { label: t('about.stats.events'), value: 99, suffix: '+' },
@@ -27,7 +28,7 @@ export function About() {
   return (
     <SectionWrapper id="about">
       <div className="relative">
-        {particles.map((p) => (
+        {!prefersReducedMotion && particles.map((p) => (
           <motion.div
             key={p.id}
             className="absolute rounded-full pointer-events-none hidden lg:block"
@@ -59,8 +60,8 @@ export function About() {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={prefersReducedMotion ? undefined : { opacity: 0, x: -30 }}
+            whileInView={prefersReducedMotion ? undefined : { opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
@@ -84,8 +85,8 @@ export function About() {
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={prefersReducedMotion ? undefined : { opacity: 0, x: 30 }}
+            whileInView={prefersReducedMotion ? undefined : { opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
             className="grid grid-cols-1 sm:grid-cols-3 gap-4"
